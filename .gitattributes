@@ -1,0 +1,4 @@
+# Tutti i file pubblicati da Blazor sono trattati come binari:
+# git non deve mai convertire i line ending, altrimenti gli hash di
+# Subresource Integrity nell'importmap non corrispondono e l'app non parte.
+* -text
