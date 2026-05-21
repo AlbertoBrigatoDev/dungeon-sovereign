@@ -1,0 +1,4 @@
+# Tutti i file di publish vanno trattati come binari: niente conversioni
+# di line ending. Le conversioni rompono gli hash di Subresource Integrity
+# dichiarati nell'importmap di Blazor.
+* -text
