@@ -168,6 +168,55 @@ window.DS = {
       'RunEnd': 'FINE RUN'
     };
     return labels[phase] || phase;
+  },
+
+  // Posiziona un tooltip flottante (es. CardTooltip) accanto al cursore,
+  // flippando verticalmente/orizzontalmente se sforerebbe il viewport.
+  // Chiamato da OnAfterRenderAsync di CardTooltip — vedi spec-frontend §6.
+  //
+  // Parametri:
+  //   el       = ElementReference al div radice del tooltip
+  //   clientX  = coordinata X del cursore (viewport-relative)
+  //   clientY  = coordinata Y del cursore (viewport-relative)
+  //
+  // Effetti: scrive style.left / style.top / style.visibility sull'elemento.
+  clampTooltipPosition: function(el, clientX, clientY) {
+    if (!el) return;
+    const offsetX = 24;
+    const offsetY = 16;
+    const margin = 8;
+    const vw = window.innerWidth;
+    const vh = window.innerHeight;
+    const rect = el.getBoundingClientRect();
+    const w = rect.width;
+    const h = rect.height;
+
+    // Default: a destra e sotto il cursore.
+    let left = clientX + offsetX;
+    let top = clientY + offsetY;
+
+    // Flip orizzontale se sfora a destra; clamp ulteriore se anche il flip
+    // sfora a sinistra (tooltip piu' largo del viewport meno offset).
+    if (left + w + margin > vw) {
+      left = clientX - w - offsetX;
+      if (left < margin) {
+        left = Math.max(margin, vw - w - margin);
+      }
+    }
+
+    // Flip verticale se sfora in basso; clamp se anche il flip sfora in alto.
+    // Tooltip piu' alti del viewport sono gestiti dal max-height + overflow
+    // del componente.
+    if (top + h + margin > vh) {
+      top = clientY - h - offsetY;
+      if (top < margin) {
+        top = margin;
+      }
+    }
+
+    el.style.left = left + 'px';
+    el.style.top = top + 'px';
+    el.style.visibility = 'visible';
   }
 };
 
