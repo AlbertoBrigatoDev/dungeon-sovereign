@@ -148,6 +148,29 @@ window.DS = {
     element.scrollTop = element.scrollHeight;
   },
 
+  // Sessione 3 PixiJS - applica lo shake CSS al DOM target.
+  // strength: 'light' (250 ms) | 'strong' (400 ms). Cerca id stabili
+  // 'hero-XXX' | 'enemy-XXX' | 'companion-XXX' (vedi spec-frontend §6).
+  // Idempotente: rimuove la classe prima di riapplicarla (force reflow)
+  // cosi che hit successivi vicini ripartano l'animazione.
+  applyShake: function(stateId, strength) {
+    if (!stateId) return;
+    const el = document.getElementById('hero-' + stateId)
+            || document.getElementById('enemy-' + stateId)
+            || document.getElementById('companion-' + stateId);
+    if (!el) return;
+    const cls = strength === 'strong' ? 'shake-strong' : 'shake-light';
+    const duration = strength === 'strong' ? 400 : 250;
+    el.classList.remove('shake-light');
+    el.classList.remove('shake-strong');
+    // Force reflow per riavviare l'animazione anche se applicata di seguito.
+    void el.offsetWidth;
+    el.classList.add(cls);
+    setTimeout(function () {
+      el.classList.remove(cls);
+    }, duration);
+  },
+
   _statusIcon: function(statusId) {
     const icons = {
       'Poison': '☠', 'Bleed': '🩸', 'Frost': '❄',

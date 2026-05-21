@@ -37,24 +37,24 @@
          solo se in futuro vengono introdotti stili scoped. -->
 
     <link rel="icon" type="image/png" href="favicon.png" />
-    <link href="_framework/dotnet.ttimgu3ssb.js" rel="preload" as="script" fetchpriority="high" crossorigin="anonymous" integrity="sha256-L39CQxkMolrqOJgSyXUFm80B+6vVKkH3dPRuUjV3fl8=" />
+    <link href="_framework/dotnet.avvaheyf7u.js" rel="preload" as="script" fetchpriority="high" crossorigin="anonymous" integrity="sha256-1kgldtxiaxAQtvoBtGqFRJ44G7jdDJt/YR52GJmevMA=" />
     <script type="importmap">{
   "imports": {
     "./_framework/blazor.webassembly.js": "./_framework/blazor.webassembly.zxhwjtv6sc.js",
+    "./_framework/dotnet.js": "./_framework/dotnet.avvaheyf7u.js",
     "./_framework/dotnet.native.js": "./_framework/dotnet.native.j9yxww2air.js",
-    "./_framework/dotnet.runtime.js": "./_framework/dotnet.runtime.r2kbxkuujc.js",
-    "./_framework/dotnet.js": "./_framework/dotnet.ttimgu3ssb.js"
+    "./_framework/dotnet.runtime.js": "./_framework/dotnet.runtime.r2kbxkuujc.js"
   },
   "scopes": {},
   "integrity": {
     "./_framework/blazor.webassembly.js": "sha256-1xlHuu1iNOJiMMz2BCq95uekwHf6pdpTcgVNKVBboPs=",
     "./_framework/blazor.webassembly.zxhwjtv6sc.js": "sha256-1xlHuu1iNOJiMMz2BCq95uekwHf6pdpTcgVNKVBboPs=",
-    "./_framework/dotnet.js": "sha256-L39CQxkMolrqOJgSyXUFm80B+6vVKkH3dPRuUjV3fl8=",
+    "./_framework/dotnet.avvaheyf7u.js": "sha256-1kgldtxiaxAQtvoBtGqFRJ44G7jdDJt/YR52GJmevMA=",
+    "./_framework/dotnet.js": "sha256-1kgldtxiaxAQtvoBtGqFRJ44G7jdDJt/YR52GJmevMA=",
     "./_framework/dotnet.native.j9yxww2air.js": "sha256-t2sLHIeFuKgbEH+wz5jXGlVRt+hMNlyCkCwLtVZUwws=",
     "./_framework/dotnet.native.js": "sha256-t2sLHIeFuKgbEH+wz5jXGlVRt+hMNlyCkCwLtVZUwws=",
     "./_framework/dotnet.runtime.js": "sha256-YyudibIWETMKrLb+nAZdJ+xDY7HY6BWf6s32UAdcvCU=",
-    "./_framework/dotnet.runtime.r2kbxkuujc.js": "sha256-YyudibIWETMKrLb+nAZdJ+xDY7HY6BWf6s32UAdcvCU=",
-    "./_framework/dotnet.ttimgu3ssb.js": "sha256-L39CQxkMolrqOJgSyXUFm80B+6vVKkH3dPRuUjV3fl8="
+    "./_framework/dotnet.runtime.r2kbxkuujc.js": "sha256-YyudibIWETMKrLb+nAZdJ+xDY7HY6BWf6s32UAdcvCU="
   }
 }</script>
 
@@ -97,6 +97,14 @@
     <script src="js/animations.js"></script>
     <!-- Audio interop — DOPO animations.js (che assegna window.DS) -->
     <script src="js/sounds.js"></script>
+    <!-- PixiJS v7 LTS + companion libs (vendor locale, cachate dal SW via .js$).
+         L'ordine e' critico: PIXI core deve precedere particle-emitter e
+         pixi-filters, che lo estendono. fx.js (window.DS.fx) viene caricato
+         dopo perche' usa entrambi. Vedi docs/spec-pixi.md §4.1. -->
+    <script src="js/vendor/pixi.min.js"></script>
+    <script src="js/vendor/pixi-particles.min.js"></script>
+    <script src="js/vendor/pixi-filters.min.js"></script>
+    <script src="js/fx.js"></script>
     <!-- PWA: registrazione del service worker e gestione aggiornamenti -->
     <script src="js/pwa.js"></script>
 
