@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-label="Spectral wolf portrait">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#142a36"/><stop offset="1" stop-color="#06080b"/></linearGradient>
+    <radialGradient id="glow" cx="50%" cy="45%" r="60%"><stop offset="0" stop-color="#8de8ff" stop-opacity=".55"/><stop offset="1" stop-color="#8de8ff" stop-opacity="0"/></radialGradient>
+  </defs>
+  <rect width="256" height="256" rx="24" fill="url(#bg)"/>
+  <circle cx="128" cy="122" r="104" fill="url(#glow)"/>
+  <path d="M43 160c18-58 53-96 105-113l23 32 39 14-36 25c3 45-24 79-83 101-19-16-35-35-48-59Z" fill="#243442"/>
+  <path d="M75 156c32 7 60 1 84-17" stroke="#bdefff" stroke-opacity=".45" stroke-width="9" stroke-linecap="round"/>
+  <path d="M166 80 190 54l5 38Z" fill="#2f4554"/>
+  <circle cx="168" cy="111" r="6" fill="#bdefff"/>
+  <path d="M62 218c35 17 85 17 129 0" stroke="#8de8ff" stroke-opacity=".2" stroke-width="10" stroke-linecap="round"/>
+</svg>

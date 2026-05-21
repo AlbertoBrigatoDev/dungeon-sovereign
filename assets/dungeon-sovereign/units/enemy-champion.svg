@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-label="Skeletal champion portrait">
+  <defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#3a2c1a"/><stop offset="1" stop-color="#070607"/></linearGradient></defs>
+  <rect width="256" height="256" rx="24" fill="url(#bg)"/>
+  <path d="M73 92c0-38 25-65 55-65s55 27 55 65v47c0 31-24 55-55 55s-55-24-55-55Z" fill="#d4c4a0"/>
+  <path d="M68 69h120l-18-32-18 22-24-33-24 33-18-22Z" fill="#c69a3c"/>
+  <circle cx="105" cy="111" r="17" fill="#141116"/><circle cx="151" cy="111" r="17" fill="#141116"/>
+  <path d="M93 201h70l22 38H71Z" fill="#313339"/>
+  <path d="M92 202h72M108 202v34M148 202v34" stroke="#d9c78f" stroke-opacity=".35" stroke-width="6"/>
+  <path d="M64 230c40 17 90 17 129 0" stroke="#c69a3c" stroke-opacity=".24" stroke-width="9" stroke-linecap="round"/>
+</svg>

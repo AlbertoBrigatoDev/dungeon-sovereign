@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 360" role="img" aria-label="Ironwall knight card art">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#231f1b"/>
+      <stop offset=".52" stop-color="#3a3224"/>
+      <stop offset="1" stop-color="#08090c"/>
+    </linearGradient>
+    <linearGradient id="metal" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#fff1c0"/>
+      <stop offset=".45" stop-color="#9fa8a9"/>
+      <stop offset="1" stop-color="#333a40"/>
+    </linearGradient>
+  </defs>
+  <rect width="256" height="360" rx="18" fill="url(#bg)"/>
+  <rect x="20" y="24" width="216" height="312" rx="13" fill="none" stroke="#e7c267" stroke-opacity=".31" stroke-width="3"/>
+  <path d="M128 62c42 0 75 36 75 86v46H53v-46c0-50 33-86 75-86Z" fill="url(#metal)"/>
+  <path d="M76 147h104v50H76Z" fill="#111418" opacity=".72"/>
+  <path d="M92 151h18M126 151h18M160 151h18" stroke="#e7c267" stroke-width="6" stroke-linecap="round"/>
+  <path d="M62 210h132l-16 95H78Z" fill="#22282c" stroke="#d2c087" stroke-opacity=".5" stroke-width="5"/>
+  <path d="M95 214v83M128 214v91M161 214v83" stroke="#879094" stroke-opacity=".55" stroke-width="5"/>
+  <path d="M45 281c52 23 116 23 166 0" stroke="#e7c267" stroke-opacity=".18" stroke-width="9" stroke-linecap="round"/>
+</svg>

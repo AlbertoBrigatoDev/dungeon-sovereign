@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 64" role="img" aria-label="Status effect spritesheet">
+  <defs>
+    <radialGradient id="poison" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#9ef06a"/><stop offset="1" stop-color="#234a18"/></radialGradient>
+    <radialGradient id="bleed" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#ff6b6b"/><stop offset="1" stop-color="#5d0710"/></radialGradient>
+    <radialGradient id="curse" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#d37bff"/><stop offset="1" stop-color="#351045"/></radialGradient>
+    <radialGradient id="slow" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#8bd7ff"/><stop offset="1" stop-color="#12364b"/></radialGradient>
+    <radialGradient id="guard" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#ffe6a0"/><stop offset="1" stop-color="#5f4317"/></radialGradient>
+    <radialGradient id="heal" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#b7ffcf"/><stop offset="1" stop-color="#14592c"/></radialGradient>
+  </defs>
+  <rect width="384" height="64" fill="none"/>
+  <circle cx="32" cy="32" r="25" fill="url(#poison)"/><path d="M20 35c12-20 19-20 24 0" fill="none" stroke="#eaffd6" stroke-width="5" stroke-linecap="round"/>
+  <circle cx="96" cy="32" r="25" fill="url(#bleed)"/><path d="M96 14c14 21 18 31 0 40-18-9-14-19 0-40Z" fill="#ffd8d8"/>
+  <circle cx="160" cy="32" r="25" fill="url(#curse)"/><path d="M143 45 160 16l17 29M145 27h30" fill="none" stroke="#f2dbff" stroke-width="5" stroke-linecap="round"/>
+  <circle cx="224" cy="32" r="25" fill="url(#slow)"/><path d="M210 32h28M224 18v28" stroke="#d8f4ff" stroke-width="5" stroke-linecap="round"/>
+  <circle cx="288" cy="32" r="25" fill="url(#guard)"/><path d="M288 14c10 7 20 9 31 9v22c0 16-12 25-31 34-19-9-31-18-31-34V23c11 0 21-2 31-9Z" fill="#fff2bf"/>
+  <circle cx="352" cy="32" r="25" fill="url(#heal)"/><path d="M352 16v32M336 32h32" stroke="#e4ffe9" stroke-width="7" stroke-linecap="round"/>
+</svg>

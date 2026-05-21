@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-label="Malachar portrait">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#3b1020"/><stop offset=".6" stop-color="#160712"/><stop offset="1" stop-color="#040304"/></linearGradient>
+    <radialGradient id="aura" cx="50%" cy="42%" r="58%"><stop offset="0" stop-color="#ff405e" stop-opacity=".5"/><stop offset="1" stop-color="#ff405e" stop-opacity="0"/></radialGradient>
+  </defs>
+  <rect width="256" height="256" rx="24" fill="url(#bg)"/>
+  <circle cx="128" cy="112" r="108" fill="url(#aura)"/>
+  <path d="M75 83c10-38 28-57 53-57s43 19 53 57l-17 17v47c0 30-16 55-36 55s-36-25-36-55v-47Z" fill="#d8d0bd"/>
+  <path d="M68 82h120l-16-43-24 30-20-45-20 45-24-30Z" fill="#c8a352"/>
+  <circle cx="106" cy="115" r="14" fill="#280512"/><circle cx="150" cy="115" r="14" fill="#280512"/>
+  <path d="M100 155c20 12 37 12 56 0" stroke="#502013" stroke-width="8" stroke-linecap="round"/>
+  <path d="M62 235c28-49 104-49 132 0Z" fill="#241219"/>
+  <path d="M128 28v201" stroke="#ffcf78" stroke-opacity=".22" stroke-width="5"/>
+</svg>

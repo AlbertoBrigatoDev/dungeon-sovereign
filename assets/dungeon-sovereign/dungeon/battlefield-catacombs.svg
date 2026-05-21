@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 420" role="img" aria-label="Catacombs battlefield texture">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#171b22"/>
+      <stop offset=".55" stop-color="#0f1116"/>
+      <stop offset="1" stop-color="#09090b"/>
+    </linearGradient>
+    <radialGradient id="torch" cx="50%" cy="28%" r="64%">
+      <stop offset="0" stop-color="#b9823a" stop-opacity=".42"/>
+      <stop offset=".42" stop-color="#6f372b" stop-opacity=".18"/>
+      <stop offset="1" stop-color="#000000" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="stones" width="96" height="64" patternUnits="userSpaceOnUse">
+      <path d="M0 0h96v64H0Z" fill="none"/>
+      <path d="M0 31h96M47 0v31M21 31v33M75 31v33" stroke="#62656b" stroke-opacity=".13" stroke-width="3"/>
+    </pattern>
+  </defs>
+  <rect width="960" height="420" fill="url(#bg)"/>
+  <rect width="960" height="420" fill="url(#stones)"/>
+  <circle cx="480" cy="138" r="360" fill="url(#torch)"/>
+  <path d="M70 377c182-53 319-67 468-39 139 26 246 22 352-18v100H70Z" fill="#070708" opacity=".58"/>
+  <path d="M92 334c111-35 210-45 297-29M591 312c89 26 178 27 268 2" stroke="#a88a55" stroke-opacity=".16" stroke-width="7" stroke-linecap="round"/>
+</svg>

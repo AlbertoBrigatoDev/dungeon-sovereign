@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="it" data-theme="dungeon">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dungeon Sovereign</title>
+    <base href="/dungeon-sovereign/" />
+
+    <!-- PWA -->
+    <link rel="manifest" href="manifest.webmanifest" />
+    <meta name="theme-color" content="#c69b41" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="Dungeon Sovereign" />
+    <link rel="apple-touch-icon" href="icons/icon-192.png" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Crimson+Pro:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+
+    <!-- Tailwind + DaisyUI (output compilato) -->
+    <link rel="stylesheet" href="css/app.css" />
+
+    <!-- Blazor WASM (CSS isolation) -->
+    <link rel="stylesheet" href="DungeonSovereign.Web.styles.css" />
+
+    <link rel="icon" type="image/png" href="favicon.png" />
+    <link href="_framework/dotnet.gtmkkw1k9p.js" rel="preload" as="script" fetchpriority="high" crossorigin="anonymous" integrity="sha256-fCsT8l1adWKw4u5I8V014BRC9SUYoXDq2OzlXRX+E5w=" />
+    <script type="importmap">{
+  "imports": {
+    "./_framework/blazor.webassembly.js": "./_framework/blazor.webassembly.zxhwjtv6sc.js",
+    "./_framework/dotnet.js": "./_framework/dotnet.gtmkkw1k9p.js",
+    "./_framework/dotnet.native.js": "./_framework/dotnet.native.j9yxww2air.js",
+    "./_framework/dotnet.runtime.js": "./_framework/dotnet.runtime.r2kbxkuujc.js"
+  },
+  "scopes": {},
+  "integrity": {
+    "./_framework/blazor.webassembly.js": "sha256-1xlHuu1iNOJiMMz2BCq95uekwHf6pdpTcgVNKVBboPs=",
+    "./_framework/blazor.webassembly.zxhwjtv6sc.js": "sha256-1xlHuu1iNOJiMMz2BCq95uekwHf6pdpTcgVNKVBboPs=",
+    "./_framework/dotnet.gtmkkw1k9p.js": "sha256-fCsT8l1adWKw4u5I8V014BRC9SUYoXDq2OzlXRX+E5w=",
+    "./_framework/dotnet.js": "sha256-fCsT8l1adWKw4u5I8V014BRC9SUYoXDq2OzlXRX+E5w=",
+    "./_framework/dotnet.native.j9yxww2air.js": "sha256-t2sLHIeFuKgbEH+wz5jXGlVRt+hMNlyCkCwLtVZUwws=",
+    "./_framework/dotnet.native.js": "sha256-t2sLHIeFuKgbEH+wz5jXGlVRt+hMNlyCkCwLtVZUwws=",
+    "./_framework/dotnet.runtime.js": "sha256-YyudibIWETMKrLb+nAZdJ+xDY7HY6BWf6s32UAdcvCU=",
+    "./_framework/dotnet.runtime.r2kbxkuujc.js": "sha256-YyudibIWETMKrLb+nAZdJ+xDY7HY6BWf6s32UAdcvCU="
+  }
+}</script>
+
+    <!-- Single Page Apps for GitHub Pages - MIT License -->
+    <!-- Decodifica la route preservata da 404.html e la ripristina nella history -->
+    <script type="text/javascript">
+        (function (l) {
+            if (l.search[1] === '/') {
+                var decoded = l.search.slice(1).split('&').map(function (s) {
+                    return s.replace(/~and~/g, '&');
+                }).join('?');
+                window.history.replaceState(null, null,
+                    l.pathname.slice(0, -1) + decoded + l.hash
+                );
+            }
+        }(window.location))
+    </script>
+</head>
+
+<body>
+    <div id="app">
+        <div class="min-h-screen bg-base-100 flex items-center justify-center">
+            <p class="font-cinzel text-primary text-lg tracking-widest animate-pulse">
+                DUNGEON SOVEREIGN
+            </p>
+        </div>
+    </div>
+
+    <div id="blazor-error-ui">
+        An unhandled error has occurred.
+        <a href="." class="reload">Reload</a>
+        <span class="dismiss">🗙</span>
+    </div>
+
+    <!-- Anime.js (CDN, MIT license) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.2/anime.min.js"></script>
+    <!-- Howler.js (CDN, MIT license) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.4/howler.min.js"></script>
+    <!-- Funzioni di interop custom — caricate DOPO anime e PRIMA di blazor -->
+    <script src="js/animations.js"></script>
+    <!-- Audio interop — DOPO animations.js (che assegna window.DS) -->
+    <script src="js/sounds.js"></script>
+    <!-- PWA: registrazione del service worker e gestione aggiornamenti -->
+    <script src="js/pwa.js"></script>
+
+    <script src="_framework/blazor.webassembly.zxhwjtv6sc.js"></script>
+</body>
+
+</html>

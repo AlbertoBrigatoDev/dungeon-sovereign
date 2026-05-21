@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 360" role="img" aria-label="Equipment card art">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#33270f"/>
+      <stop offset=".58" stop-color="#18120b"/>
+      <stop offset="1" stop-color="#050608"/>
+    </linearGradient>
+    <linearGradient id="steel" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#fbf0c0"/>
+      <stop offset=".5" stop-color="#a78d55"/>
+      <stop offset="1" stop-color="#4b3b23"/>
+    </linearGradient>
+  </defs>
+  <rect width="256" height="360" rx="18" fill="url(#bg)"/>
+  <rect x="21" y="25" width="214" height="310" rx="12" fill="none" stroke="#e7c267" stroke-opacity=".28" stroke-width="3"/>
+  <path d="M128 58c29 20 59 27 91 27v82c0 65-39 111-91 137-52-26-91-72-91-137V85c32 0 62-7 91-27Z" fill="url(#steel)" opacity=".92"/>
+  <path d="M128 82v190c33-20 58-52 58-99v-59c-22-2-41-8-58-32Z" fill="#171411" opacity=".32"/>
+  <path d="M74 121h108M74 160h108M93 200h70" stroke="#fff2b6" stroke-opacity=".42" stroke-width="7" stroke-linecap="round"/>
+  <circle cx="128" cy="166" r="22" fill="#08090b" opacity=".45"/>
+  <circle cx="128" cy="166" r="13" fill="#e7c267" opacity=".85"/>
+</svg>

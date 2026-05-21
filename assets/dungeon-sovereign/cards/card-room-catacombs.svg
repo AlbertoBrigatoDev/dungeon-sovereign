@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 360" role="img" aria-label="Catacombs room card art">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#1c2027"/>
+      <stop offset=".62" stop-color="#111318"/>
+      <stop offset="1" stop-color="#050607"/>
+    </linearGradient>
+    <radialGradient id="fire" cx="50%" cy="54%" r="45%">
+      <stop offset="0" stop-color="#d9a64f" stop-opacity=".65"/>
+      <stop offset="1" stop-color="#d9a64f" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="256" height="360" rx="18" fill="url(#bg)"/>
+  <rect x="20" y="24" width="216" height="312" rx="13" fill="none" stroke="#b69a60" stroke-opacity=".26" stroke-width="3"/>
+  <circle cx="128" cy="190" r="105" fill="url(#fire)"/>
+  <path d="M45 302h166V157c0-45-37-82-83-82s-83 37-83 82Z" fill="#0a0c10" stroke="#4b4d51" stroke-width="6"/>
+  <path d="M76 302V164c0-29 23-52 52-52s52 23 52 52v138" fill="#181c22"/>
+  <path d="M47 204h162M61 253h134M86 118v184M128 112v190M170 118v184" stroke="#53575d" stroke-opacity=".45" stroke-width="5"/>
+  <path d="M94 224c12-17 23-17 34 0 12-17 23-17 34 0" fill="none" stroke="#d9a64f" stroke-opacity=".58" stroke-width="5" stroke-linecap="round"/>
+</svg>

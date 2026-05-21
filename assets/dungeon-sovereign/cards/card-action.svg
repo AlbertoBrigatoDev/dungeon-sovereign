@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 360" role="img" aria-label="Action card art">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#101b33"/>
+      <stop offset="0.52" stop-color="#172944"/>
+      <stop offset="1" stop-color="#071018"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="38%" r="50%">
+      <stop offset="0" stop-color="#8ac7ff" stop-opacity=".72"/>
+      <stop offset="1" stop-color="#8ac7ff" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="256" height="360" rx="18" fill="url(#bg)"/>
+  <rect x="18" y="22" width="220" height="316" rx="13" fill="none" stroke="#8ac7ff" stroke-opacity=".22" stroke-width="3"/>
+  <circle cx="128" cy="120" r="96" fill="url(#glow)"/>
+  <path d="M134 58 119 73l54 68-88 90 13 13 91-87 65 51 14-15-67-67 42-46-15-15-45 42Z" transform="translate(-18 22)" fill="#e7f4ff" opacity=".92"/>
+  <path d="M89 228 52 268l21 20 39-37Z" fill="#c6a66c"/>
+  <path d="M49 268 36 307l38-14Z" fill="#ead7a2"/>
+  <path d="M49 268 74 293" stroke="#281a12" stroke-width="6" stroke-linecap="round"/>
+  <path d="M52 60c43 20 97 21 152 0M34 292c57 21 116 21 188 0" fill="none" stroke="#e5c56f" stroke-opacity=".18" stroke-width="5"/>
+</svg>
