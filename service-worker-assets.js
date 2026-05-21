@@ -1,5 +1,5 @@
 self.assetsManifest = {
-  "version": "3jydZFlT",
+  "version": "Z06//Ezt",
   "assets": [
     {
       "hash": "sha256-47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU=",
@@ -10,12 +10,12 @@ self.assetsManifest = {
       "url": "404.html"
     },
     {
-      "hash": "sha256-dnCOVqi1WpSnNmPJrU951wioo3raWg5kD8bYeHOnkm0=",
-      "url": "_framework/DungeonSovereign.Engine.awwsya3wyt.wasm"
+      "hash": "sha256-n95yU3FcX3Kdo4CaEisGHzr4SC4Z6cKpLGdOf4zYs/E=",
+      "url": "_framework/DungeonSovereign.Engine.pm7zkb7smg.wasm"
     },
     {
-      "hash": "sha256-WbHHiWnFLpPSz/mm5m639ppWj5KtEkMIPpmeL/69Yjo=",
-      "url": "_framework/DungeonSovereign.Web.zxqdlwlu06.wasm"
+      "hash": "sha256-9ZBcUxJMHcLi4L4d/bgGbxKeq2OxQ2IYsM2gYEebdCg=",
+      "url": "_framework/DungeonSovereign.Web.7tf8xvhf4z.wasm"
     },
     {
       "hash": "sha256-QyGeL+1jPZOu4u/mOLeqd7r/6k/DD2yK8DKo3YgEItQ=",
@@ -158,10 +158,6 @@ self.assetsManifest = {
       "url": "_framework/blazor.webassembly.zxhwjtv6sc.js"
     },
     {
-      "hash": "sha256-fCsT8l1adWKw4u5I8V014BRC9SUYoXDq2OzlXRX+E5w=",
-      "url": "_framework/dotnet.gtmkkw1k9p.js"
-    },
-    {
       "hash": "sha256-auNajBCt33EWNiuvS+NNTXBwb7zhbrVXzHUfSfTZBZ8=",
       "url": "_framework/dotnet.native.imkoda52yu.wasm"
     },
@@ -172,6 +168,10 @@ self.assetsManifest = {
     {
       "hash": "sha256-YyudibIWETMKrLb+nAZdJ+xDY7HY6BWf6s32UAdcvCU=",
       "url": "_framework/dotnet.runtime.r2kbxkuujc.js"
+    },
+    {
+      "hash": "sha256-bsSKeiyZbjZvlVHgkS1HqIasfTTlsOGMYJBDDsHlEj0=",
+      "url": "_framework/dotnet.u0pf0umk41.js"
     },
     {
       "hash": "sha256-SZLtQnRc0JkwqHab0VUVP7T3uBPSeYzxzDnpxPpUnHk=",
@@ -606,15 +606,15 @@ self.assetsManifest = {
       "url": "assets/dungeon-sovereign/units/enemy-wolf.svg"
     },
     {
-      "hash": "sha256-OLn/87OqNczKh+pQuEnzcws8qWUL0amMLSS4kZ60/Ag=",
+      "hash": "sha256-imPvvWOT0NwGMTYOCqbsH9Fhh0GhDzJOSLTMg/NuyOo=",
       "url": "css/app.css"
     },
     {
-      "hash": "sha256-4mWsDy3aHl36ZbGt8zByK7Pvd4kRUoNgTYzRnwmPHwg=",
+      "hash": "sha256-AMfHeiAD5MRZFPAzqqBYHku1z8E4CZHemqZ6iv1Yt9o=",
       "url": "favicon.png"
     },
     {
-      "hash": "sha256-DbpQaq68ZSb5IoPosBErM1QWBfsbTxpJqhU0REi6wP4=",
+      "hash": "sha256-AMfHeiAD5MRZFPAzqqBYHku1z8E4CZHemqZ6iv1Yt9o=",
       "url": "icon-192.png"
     },
     {
@@ -634,7 +634,7 @@ self.assetsManifest = {
       "url": "icons/icon-maskable-512.png"
     },
     {
-      "hash": "sha256-pUCCpsIQFaTsnQqynspH1ojB8e3lx7INNfC3QRr+Gag=",
+      "hash": "sha256-gFF16fR1zUwWxWCzH9u7CoY+Qy3LmfuIxJSbHl3erNw=",
       "url": "index.html"
     },
     {
