@@ -23,28 +23,30 @@
     <!-- Tailwind + DaisyUI (output compilato) -->
     <link rel="stylesheet" href="css/app.css" />
 
-    <!-- Blazor WASM (CSS isolation) -->
-    <link rel="stylesheet" href="DungeonSovereign.Web.styles.css" />
+    <!-- Nota: il bundle CSS isolation (DungeonSovereign.Web.styles.css) non e'
+         generato perche' il progetto non usa file *.razor.css. Aggiungere qui
+         il <link rel="stylesheet" href="DungeonSovereign.Web.styles.css" />
+         solo se in futuro vengono introdotti stili scoped. -->
 
     <link rel="icon" type="image/png" href="favicon.png" />
-    <link href="_framework/dotnet.vxxoeqvuqr.js" rel="preload" as="script" fetchpriority="high" crossorigin="anonymous" integrity="sha256-LVieTS6gKOnFLIMBESqb+i7CddwBu/FHouZDnBrsQrM=" />
+    <link href="_framework/dotnet.bm11uvkmlx.js" rel="preload" as="script" fetchpriority="high" crossorigin="anonymous" integrity="sha256-jceEZ2NjgWzbVjKWryhrUCoZaO/hRgZr1Wb7YtpVK4k=" />
     <script type="importmap">{
   "imports": {
     "./_framework/blazor.webassembly.js": "./_framework/blazor.webassembly.zxhwjtv6sc.js",
+    "./_framework/dotnet.js": "./_framework/dotnet.bm11uvkmlx.js",
     "./_framework/dotnet.native.js": "./_framework/dotnet.native.j9yxww2air.js",
-    "./_framework/dotnet.runtime.js": "./_framework/dotnet.runtime.r2kbxkuujc.js",
-    "./_framework/dotnet.js": "./_framework/dotnet.vxxoeqvuqr.js"
+    "./_framework/dotnet.runtime.js": "./_framework/dotnet.runtime.r2kbxkuujc.js"
   },
   "scopes": {},
   "integrity": {
     "./_framework/blazor.webassembly.js": "sha256-1xlHuu1iNOJiMMz2BCq95uekwHf6pdpTcgVNKVBboPs=",
     "./_framework/blazor.webassembly.zxhwjtv6sc.js": "sha256-1xlHuu1iNOJiMMz2BCq95uekwHf6pdpTcgVNKVBboPs=",
-    "./_framework/dotnet.js": "sha256-LVieTS6gKOnFLIMBESqb+i7CddwBu/FHouZDnBrsQrM=",
+    "./_framework/dotnet.bm11uvkmlx.js": "sha256-jceEZ2NjgWzbVjKWryhrUCoZaO/hRgZr1Wb7YtpVK4k=",
+    "./_framework/dotnet.js": "sha256-jceEZ2NjgWzbVjKWryhrUCoZaO/hRgZr1Wb7YtpVK4k=",
     "./_framework/dotnet.native.j9yxww2air.js": "sha256-t2sLHIeFuKgbEH+wz5jXGlVRt+hMNlyCkCwLtVZUwws=",
     "./_framework/dotnet.native.js": "sha256-t2sLHIeFuKgbEH+wz5jXGlVRt+hMNlyCkCwLtVZUwws=",
     "./_framework/dotnet.runtime.js": "sha256-YyudibIWETMKrLb+nAZdJ+xDY7HY6BWf6s32UAdcvCU=",
-    "./_framework/dotnet.runtime.r2kbxkuujc.js": "sha256-YyudibIWETMKrLb+nAZdJ+xDY7HY6BWf6s32UAdcvCU=",
-    "./_framework/dotnet.vxxoeqvuqr.js": "sha256-LVieTS6gKOnFLIMBESqb+i7CddwBu/FHouZDnBrsQrM="
+    "./_framework/dotnet.runtime.r2kbxkuujc.js": "sha256-YyudibIWETMKrLb+nAZdJ+xDY7HY6BWf6s32UAdcvCU="
   }
 }</script>
 
