@@ -32,7 +32,7 @@ const offlineAssetsExclude = [
     /^service-worker-assets\.js$/
 ];
 
-const base = '/';
+const base = '/dungeon-sovereign/';
 const baseUrl = new URL(base, self.origin);
 const manifestUrlList = self.assetsManifest.assets.map(asset => new URL(asset.url, baseUrl).href);
 
