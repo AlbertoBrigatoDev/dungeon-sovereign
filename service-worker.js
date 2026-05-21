@@ -32,8 +32,10 @@ const offlineAssetsExclude = [
     /^service-worker-assets\.js$/
 ];
 
-const base = '/dungeon-sovereign/';
-const baseUrl = new URL(base, self.origin);
+// Risolve il base path dalla posizione effettiva del service worker, in modo che
+// il manifest funzioni sia quando l'app e' servita da root (dev) sia quando e'
+// servita da una sottocartella (es. GitHub Pages /dungeon-sovereign/).
+const baseUrl = new URL('./', self.location.href);
 const manifestUrlList = self.assetsManifest.assets.map(asset => new URL(asset.url, baseUrl).href);
 
 async function onInstall(event) {
