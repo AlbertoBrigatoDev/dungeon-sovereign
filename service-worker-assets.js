@@ -1,5 +1,5 @@
 self.assetsManifest = {
-  "version": "niqY57uW",
+  "version": "/wDqGosi",
   "assets": [
     {
       "hash": "sha256-47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU=",
@@ -10,12 +10,12 @@ self.assetsManifest = {
       "url": "404.html"
     },
     {
-      "hash": "sha256-JeaoDJwEofoktNyvjUpumyeNuSHGAS9MTn3zWBelnxM=",
-      "url": "_framework/DungeonSovereign.Engine.p7d979lv9k.wasm"
+      "hash": "sha256-+HSRoDctC3K1n10pn8DEIYs1shmwwFi3H5aWdtPYZN4=",
+      "url": "_framework/DungeonSovereign.Engine.cfmavzlj9l.wasm"
     },
     {
-      "hash": "sha256-rJBj8S8Cz7biGHOOfLNk7tbgYH+1eOEGdC/grfKtp3c=",
-      "url": "_framework/DungeonSovereign.Web.s6ypq72sos.wasm"
+      "hash": "sha256-mSRxCzGuOeghxwPtriWUcRKQqCJOrP1AbCJPzxBWmqo=",
+      "url": "_framework/DungeonSovereign.Web.lhi42307no.wasm"
     },
     {
       "hash": "sha256-QyGeL+1jPZOu4u/mOLeqd7r/6k/DD2yK8DKo3YgEItQ=",
@@ -158,8 +158,8 @@ self.assetsManifest = {
       "url": "_framework/blazor.webassembly.zxhwjtv6sc.js"
     },
     {
-      "hash": "sha256-jceEZ2NjgWzbVjKWryhrUCoZaO/hRgZr1Wb7YtpVK4k=",
-      "url": "_framework/dotnet.bm11uvkmlx.js"
+      "hash": "sha256-DRga0Oe62+d/pOkp2kwCPJwc4TYA83ZEncp0/CiP9m4=",
+      "url": "_framework/dotnet.56buk0z3y2.js"
     },
     {
       "hash": "sha256-auNajBCt33EWNiuvS+NNTXBwb7zhbrVXzHUfSfTZBZ8=",
@@ -634,7 +634,7 @@ self.assetsManifest = {
       "url": "icons/icon-maskable-512.png"
     },
     {
-      "hash": "sha256-Wuv8xY381X013zmQuW+6gCjvL67Bq04J/k/9Oz+TnZc=",
+      "hash": "sha256-wSFXRDUxV+wfDNqvb+LRSv5tjtNb/cFXGcFlPwrv5LI=",
       "url": "index.html"
     },
     {
@@ -650,7 +650,7 @@ self.assetsManifest = {
       "url": "js/sounds.js"
     },
     {
-      "hash": "sha256-muEryTqZVsbei2sIDAyoNM/jIo6yr+yC08NHRTWEl88=",
+      "hash": "sha256-nO3jMK8Ncp171I7YSGT8bSYXpSEfhh1rG32M3EIqNPY=",
       "url": "manifest.webmanifest"
     },
     {

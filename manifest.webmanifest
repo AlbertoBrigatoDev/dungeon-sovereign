@@ -2,7 +2,7 @@
   "name": "Dungeon Sovereign",
   "short_name": "Dungeon Sovereign",
   "description": "Un dungeon run cooperativo card battler",
-  "id": "/",
+  "id": "./",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",
