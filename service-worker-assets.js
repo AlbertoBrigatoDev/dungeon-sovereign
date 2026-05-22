@@ -1,5 +1,5 @@
 self.assetsManifest = {
-  "version": "MIjchcsm",
+  "version": "ztkVbIO0",
   "assets": [
     {
       "hash": "sha256-47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU=",
@@ -10,12 +10,12 @@ self.assetsManifest = {
       "url": "404.html"
     },
     {
-      "hash": "sha256-JVtxu5jF/fwVwsekt3ZbS7PPiBZHFdK6/mRpCk3CMOI=",
-      "url": "_framework/DungeonSovereign.Engine.demjzwahx9.wasm"
+      "hash": "sha256-xObTNvk1Yni+FP6yo15ZgXB4wQT5bEmdkA5gX8PPpRU=",
+      "url": "_framework/DungeonSovereign.Engine.sszkb3prq4.wasm"
     },
     {
-      "hash": "sha256-BAuiug7GtAbrvVIQa7wKfu0LkATYeELXAdzUZTUdr2Y=",
-      "url": "_framework/DungeonSovereign.Web.4q9fy9naj0.wasm"
+      "hash": "sha256-iwxPmXq9pfDTRZn/xbEjGcCbwPlR5Gm3yXvcqP8MjB0=",
+      "url": "_framework/DungeonSovereign.Web.54u03al71q.wasm"
     },
     {
       "hash": "sha256-QyGeL+1jPZOu4u/mOLeqd7r/6k/DD2yK8DKo3YgEItQ=",
@@ -158,8 +158,8 @@ self.assetsManifest = {
       "url": "_framework/blazor.webassembly.zxhwjtv6sc.js"
     },
     {
-      "hash": "sha256-2VNlPKsh+3htoDCkpz4H+AKI1Cx4GuWnC5ENHIlgboI=",
-      "url": "_framework/dotnet.h6fox07z2u.js"
+      "hash": "sha256-IOut+8BGuyKGcpRsoH4s3EE7DDX/a68KOvUWhpsCnXs=",
+      "url": "_framework/dotnet.gkc1v06h61.js"
     },
     {
       "hash": "sha256-auNajBCt33EWNiuvS+NNTXBwb7zhbrVXzHUfSfTZBZ8=",
@@ -606,7 +606,7 @@ self.assetsManifest = {
       "url": "assets/dungeon-sovereign/units/enemy-wolf.svg"
     },
     {
-      "hash": "sha256-MgBB48vQWJu2XIV524fYZ2VLgfQW5T5bsJQQT6leD70=",
+      "hash": "sha256-nZELEaMzD/CWKVEDhuYSstWf5HhtoYwUS/tjyqgW6tA=",
       "url": "css/app.css"
     },
     {
@@ -634,15 +634,15 @@ self.assetsManifest = {
       "url": "icons/icon-maskable-512.png"
     },
     {
-      "hash": "sha256-TfuVFWzKX/CT0hwLOMJdMPMkPRn/Op4yPVFUY9W0p2c=",
+      "hash": "sha256-AdaUNRKjHGXZWuupG6Xh6xXQ0ek/wCTOJmLfvjGJxes=",
       "url": "index.html"
     },
     {
-      "hash": "sha256-2PC3Jr5PKbPwRbZpM8onSxp+HofZvdp8wmJs2BJgsOo=",
+      "hash": "sha256-GtP+HSSW9XYQuOfmLq6nvQOyqdeGofYYAZyjV6s5GC0=",
       "url": "js/animations.js"
     },
     {
-      "hash": "sha256-QxOmUT+fWatysVo/0JaiGpErMPHbKMZ+Oznx1YPi1Pk=",
+      "hash": "sha256-vwxGpL+Me0YZrYosfGPVi5yLgYt29OI8AYNmtb3m7pk=",
       "url": "js/fx.js"
     },
     {

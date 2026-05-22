@@ -228,6 +228,63 @@ window.DS = {
     });
   },
 
+  // Sessione 11 - Animazione d'ingresso della schermata di fine run.
+  // Stagger fade-up dei pannelli statistiche, count-up dei numeri da 0,
+  // type-on della frase di valutazione. Tutto DOM/Anime.js, indipendente
+  // dal layer Pixi. No-op difensivo se gli elementi non esistono.
+  animateRunEnd: function() {
+    // Stagger fade-up dei pannelli.
+    const panels = document.querySelectorAll('.ds-stat-panel');
+    if (panels.length > 0) {
+      anime({
+        targets: panels,
+        opacity: [0, 1],
+        translateY: [16, 0],
+        duration: 500,
+        delay: anime.stagger(120, { start: 150 }),
+        easing: 'easeOutCubic'
+      });
+    }
+
+    // Count-up dei numeri da 0 al valore in data-target.
+    const numbers = document.querySelectorAll('.ds-stat-number');
+    numbers.forEach(function(el) {
+      const target = parseInt(el.getAttribute('data-target') || '0', 10);
+      if (isNaN(target) || target <= 0) {
+        el.textContent = String(isNaN(target) ? 0 : target);
+        return;
+      }
+      const counter = { v: 0 };
+      anime({
+        targets: counter,
+        v: target,
+        duration: 900,
+        delay: 300,
+        easing: 'easeOutCubic',
+        round: 1,
+        update: function() {
+          el.textContent = String(counter.v);
+        }
+      });
+    });
+
+    // Type-on della frase di valutazione.
+    const phraseEl = document.querySelector('.ds-eval-phrase');
+    if (phraseEl) {
+      const full = phraseEl.getAttribute('data-text') || phraseEl.textContent || '';
+      phraseEl.textContent = '';
+      let i = 0;
+      const step = function() {
+        if (i <= full.length) {
+          phraseEl.textContent = full.slice(0, i);
+          i++;
+          setTimeout(step, 28);
+        }
+      };
+      setTimeout(step, 700);
+    }
+  },
+
   // Annuncio cambio fase
   announcePhaseChange: function(phaseName) {
     const overlay = document.getElementById('phase-announce');

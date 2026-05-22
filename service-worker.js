@@ -1,4 +1,4 @@
-/* Manifest version: MIjchcsm */
+/* Manifest version: ztkVbIO0 */
 // Service worker per la build pubblicata (dotnet publish).
 // Precarica tutti gli asset elencati in service-worker-assets.js, generato
 // automaticamente da Blazor in base alla proprieta' ServiceWorkerAssetsManifest

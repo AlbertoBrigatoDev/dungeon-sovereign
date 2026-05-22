@@ -179,6 +179,9 @@ DS.fx = (function () {
             if (DS.fx.room && typeof DS.fx.room.leave === 'function') {
                 DS.fx.room.leave();
             }
+            if (DS.fx.criticalHp && typeof DS.fx.criticalHp.clear === 'function') {
+                DS.fx.criticalHp.clear();
+            }
             _app.ticker.stop();
             if (_app.stage) {
                 _app.stage.removeChildren();
@@ -238,6 +241,12 @@ DS.fx = (function () {
             }
             if (DS.fx.equipImpact && typeof DS.fx.equipImpact._disposeTextures === 'function') {
                 DS.fx.equipImpact._disposeTextures();
+            }
+            if (DS.fx.criticalHp && typeof DS.fx.criticalHp.clear === 'function') {
+                DS.fx.criticalHp.clear();
+            }
+            if (DS.fx.mulliganSwirl && typeof DS.fx.mulliganSwirl._disposeTextures === 'function') {
+                DS.fx.mulliganSwirl._disposeTextures();
             }
             if (_resizeHandler) {
                 window.removeEventListener('resize', _resizeHandler);
@@ -3034,4 +3043,221 @@ DS.fx.summonRune = function (slotElId) {
         console.warn('DS.fx.summonRune: fallita.', e);
     }
 };
+
+// ======================================================================
+// DS.fx.criticalHp - Aura rossa per le unita' a un passo dal KO.
+//
+// Sessione 11: attach(stateId) quando gli HP scendono sotto il 25%,
+// detach(stateId) quando risalgono o l'unita' muore. Indicizzato per
+// stateId (non e' un RuntimeEffect). Pattern di DS.fx.statusAura.
+// Vedi docs/spec-pixi.md §4.11.
+// ======================================================================
+
+DS.fx.criticalHp = (function () {
+
+    const CRIT_COLOR = 0xdc2626; // rosso critico
+
+    // _auras: Map<stateId, { container, graphics }>
+    const _auras = new Map();
+    let _tickerCb = null;
+    let _elapsed = 0;
+
+    function _lookupTarget(stateId) {
+        if (!stateId) return null;
+        return document.getElementById('hero-' + stateId)
+            || document.getElementById('enemy-' + stateId)
+            || document.getElementById('companion-' + stateId);
+    }
+
+    function _ensureTicker() {
+        const app = DS.fx._app;
+        if (!app || _tickerCb) return;
+        _tickerCb = function (ticker) {
+            const deltaMS = (ticker && typeof ticker.deltaMS === 'number')
+                ? ticker.deltaMS
+                : (app.ticker.deltaMS || 16.7);
+            _elapsed += deltaMS;
+            const pulse = 0.5 + 0.5 * Math.sin(_elapsed / 320);
+
+            const ids = Array.from(_auras.keys());
+            for (const id of ids) {
+                const aura = _auras.get(id);
+                if (!aura) continue;
+                const el = _lookupTarget(id);
+                if (!el) {
+                    _remove(id);
+                    continue;
+                }
+                const rect = el.getBoundingClientRect();
+                const g = aura.graphics;
+                const pad = 6;
+                g.clear();
+                // Cornice rossa pulsante.
+                g.lineStyle(2 + 3 * pulse, CRIT_COLOR, 0.35 + 0.5 * pulse);
+                g.drawRoundedRect(
+                    rect.left - pad, rect.top - pad,
+                    rect.width + pad * 2, rect.height + pad * 2, 12);
+                // Velo interno tenue.
+                g.beginFill(CRIT_COLOR, 0.04 + 0.07 * pulse);
+                g.drawRoundedRect(
+                    rect.left - pad, rect.top - pad,
+                    rect.width + pad * 2, rect.height + pad * 2, 12);
+                g.endFill();
+            }
+
+            if (_auras.size === 0 && _tickerCb) {
+                app.ticker.remove(_tickerCb);
+                _tickerCb = null;
+            }
+        };
+        app.ticker.add(_tickerCb);
+    }
+
+    function _remove(stateId) {
+        const aura = _auras.get(stateId);
+        if (!aura) return;
+        _auras.delete(stateId);
+        try {
+            if (aura.container.parent) aura.container.parent.removeChild(aura.container);
+            aura.container.destroy({ children: true });
+        } catch (e) {}
+    }
+
+    function attach(stateId) {
+        if (!DS.fx.enabled) return;
+        if (!stateId || _auras.has(stateId)) return;
+        const app = DS.fx._app;
+        if (!app) return;
+        try {
+            const container = new PIXI.Container();
+            const graphics = new PIXI.Graphics();
+            container.addChild(graphics);
+            app.stage.addChild(container);
+            _auras.set(stateId, { container: container, graphics: graphics });
+            _ensureTicker();
+        } catch (e) {
+            console.warn('DS.fx.criticalHp: attach fallita per ' + stateId, e);
+        }
+    }
+
+    function detach(stateId) {
+        _remove(stateId);
+    }
+
+    function clear() {
+        for (const id of Array.from(_auras.keys())) _remove(id);
+        const app = DS.fx._app;
+        if (app && app.ticker && _tickerCb) {
+            app.ticker.remove(_tickerCb);
+            _tickerCb = null;
+        }
+    }
+
+    return {
+        attach: attach,
+        detach: detach,
+        clear: clear,
+        get count() { return _auras.size; }
+    };
+})();
+
+// ======================================================================
+// DS.fx.mulliganSwirl - Carte che vorticano al RIMESCOLA del mulligan.
+//
+// Sessione 11: one-shot ~1s. Sprite "carta" (rettangolino) che orbitano
+// attorno al centro schermo. Canvas a z-70 (sopra l'overlay z-50).
+// ======================================================================
+
+DS.fx.mulliganSwirl = (function () {
+
+    let _texture = null;
+
+    function _getTexture() {
+        if (_texture) return _texture;
+        const app = DS.fx._app;
+        if (!app || !app.renderer) return null;
+        try {
+            const g = new PIXI.Graphics();
+            // Rettangolino "carta" 2:3.
+            g.beginFill(0xfde68a, 1);
+            g.drawRoundedRect(-7, -10, 14, 20, 2);
+            g.endFill();
+            g.lineStyle(1, 0xc69b41, 1);
+            g.drawRoundedRect(-7, -10, 14, 20, 2);
+            _texture = app.renderer.generateTexture(g, {
+                region: new PIXI.Rectangle(-12, -14, 24, 28), resolution: 2
+            });
+            g.destroy();
+            return _texture;
+        } catch (e) { return null; }
+    }
+
+    function _disposeTextures() {
+        if (_texture) { try { _texture.destroy(true); } catch (e) {} _texture = null; }
+    }
+
+    function play() {
+        if (!DS.fx.enabled) return;
+        const app = DS.fx._app;
+        if (!app || !PIXI.particles || !PIXI.particles.Emitter) return;
+        const texture = _getTexture();
+        if (!texture) return;
+
+        try {
+            const container = new PIXI.Container();
+            container.x = app.screen.width / 2;
+            container.y = app.screen.height / 2;
+            app.stage.addChild(container);
+
+            const emitter = new PIXI.particles.Emitter(container, {
+                lifetime: { min: 0.7, max: 1.1 },
+                frequency: 0.02,
+                emitterLifetime: 0.5,
+                maxParticles: 40,
+                pos: { x: 0, y: 0 },
+                addAtBack: false,
+                behaviors: [
+                    { type: 'alpha', config: { alpha: { list: [
+                        { time: 0, value: 0 }, { time: 0.25, value: 0.95 }, { time: 1, value: 0 }
+                    ] } } },
+                    { type: 'scale', config: { scale: { list: [
+                        { time: 0, value: 0.5 }, { time: 1, value: 1.0 }
+                    ] }, minMult: 0.7 } },
+                    { type: 'moveSpeed', config: { speed: { list: [
+                        { time: 0, value: 220 }, { time: 1, value: 40 }
+                    ] }, minMult: 0.8 } },
+                    { type: 'rotation', config: { accel: 0, minSpeed: 120, maxSpeed: 320, minStart: 0, maxStart: 360 } },
+                    { type: 'spawnShape', config: { type: 'torus', data: { x: 0, y: 0, radius: 30, innerRadius: 0, affectRotation: false } } },
+                    { type: 'textureSingle', config: { texture: texture } }
+                ]
+            });
+            emitter.emit = true;
+
+            if (DS.fx._canvas) DS.fx._canvas.style.zIndex = '70';
+
+            const cb = function (ticker) {
+                const deltaMS = (ticker && typeof ticker.deltaMS === 'number')
+                    ? ticker.deltaMS
+                    : (app.ticker.deltaMS || 16.7);
+                try { emitter.update(deltaMS / 1000); } catch (e) {}
+                container.rotation += deltaMS / 1000 * 1.5;
+                if (!emitter.emit && emitter.particleCount === 0) {
+                    app.ticker.remove(cb);
+                    try { emitter.destroy(); } catch (e) {}
+                    try {
+                        if (container.parent) container.parent.removeChild(container);
+                        container.destroy({ children: true });
+                    } catch (e) {}
+                    if (DS.fx._canvas) DS.fx._canvas.style.zIndex = '30';
+                }
+            };
+            app.ticker.add(cb);
+        } catch (e) {
+            console.warn('DS.fx.mulliganSwirl: fallita.', e);
+        }
+    }
+
+    play._disposeTextures = _disposeTextures;
+    return play;
+})();
 
