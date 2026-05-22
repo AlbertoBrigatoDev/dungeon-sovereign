@@ -73,6 +73,119 @@ window.DS = {
     }
   },
 
+  // Sessione 6 - Volo della carta giocata dalla mano al centro del campo.
+  // Clona il nodo #card-{instanceId} (la card originale viene rimossa dal
+  // DOM dal re-render Blazor subito dopo): il clone vola indipendente e si
+  // autodistrugge a fine animazione. typeKey colora la scia Pixi.
+  cardFlight: function(instanceId, typeKey) {
+    const cardEl = document.getElementById('card-' + instanceId);
+    if (!cardEl) return;
+
+    const startRect = cardEl.getBoundingClientRect();
+    if (startRect.width === 0 || startRect.height === 0) return;
+
+    // Destinazione: centro del BattlefieldPanel, o centro viewport.
+    const field = document.getElementById('ds-battlefield');
+    let destX, destY;
+    if (field) {
+      const fr = field.getBoundingClientRect();
+      destX = fr.left + fr.width / 2;
+      destY = fr.top + fr.height / 2;
+    } else {
+      destX = window.innerWidth / 2;
+      destY = window.innerHeight / 2;
+    }
+
+    // Clone visivo indipendente dall'albero Blazor.
+    const clone = cardEl.cloneNode(true);
+    clone.removeAttribute('id');
+    clone.style.position = 'fixed';
+    clone.style.left = startRect.left + 'px';
+    clone.style.top = startRect.top + 'px';
+    clone.style.width = startRect.width + 'px';
+    clone.style.height = startRect.height + 'px';
+    clone.style.margin = '0';
+    clone.style.zIndex = '45';
+    clone.style.pointerEvents = 'none';
+    document.body.appendChild(clone);
+
+    const deltaX = destX - (startRect.left + startRect.width / 2);
+    const deltaY = destY - (startRect.top + startRect.height / 2);
+
+    const trail = (window.DS && DS.fx && DS.fx.cardTrail) ? DS.fx.cardTrail : null;
+
+    anime({
+      targets: clone,
+      translateX: deltaX,
+      translateY: deltaY,
+      scale: [1, 0.5],
+      rotate: [0, 8],
+      opacity: [1, 0],
+      duration: 520,
+      easing: 'easeInCubic',
+      begin: function() {
+        if (trail) trail.start(typeKey);
+      },
+      update: function() {
+        if (!trail) return;
+        const r = clone.getBoundingClientRect();
+        trail.move(r.left + r.width / 2, r.top + r.height / 2);
+      },
+      complete: function() {
+        if (trail) trail.stop();
+        clone.remove();
+      }
+    });
+  },
+
+  // Sessione 10 - Volo di una carta equipaggiamento verso il suo slot.
+  // Variante di cardFlight con destinazione esplicita (un id slot del
+  // pannello eroe). Al termine spawna la scintilla d'arrivo Pixi.
+  // category: 'weapon' | 'armor' | 'trinket' -> colore della scintilla.
+  equipFlight: function(instanceId, slotElId, category) {
+    const cardEl = document.getElementById('card-' + instanceId);
+    const slotEl = document.getElementById(slotElId);
+    if (!cardEl || !slotEl) return;
+
+    const startRect = cardEl.getBoundingClientRect();
+    if (startRect.width === 0 || startRect.height === 0) return;
+
+    const slotRect = slotEl.getBoundingClientRect();
+    const destX = slotRect.left + slotRect.width / 2;
+    const destY = slotRect.top + slotRect.height / 2;
+
+    const clone = cardEl.cloneNode(true);
+    clone.removeAttribute('id');
+    clone.style.position = 'fixed';
+    clone.style.left = startRect.left + 'px';
+    clone.style.top = startRect.top + 'px';
+    clone.style.width = startRect.width + 'px';
+    clone.style.height = startRect.height + 'px';
+    clone.style.margin = '0';
+    clone.style.zIndex = '45';
+    clone.style.pointerEvents = 'none';
+    document.body.appendChild(clone);
+
+    const deltaX = destX - (startRect.left + startRect.width / 2);
+    const deltaY = destY - (startRect.top + startRect.height / 2);
+
+    anime({
+      targets: clone,
+      translateX: deltaX,
+      translateY: deltaY,
+      scale: [1, 0.18],
+      opacity: [1, 0],
+      duration: 480,
+      easing: 'easeInCubic',
+      complete: function() {
+        clone.remove();
+        if (window.DS && DS.fx && DS.fx.equipImpact) {
+          DS.fx.equipImpact(slotElId, category);
+        }
+      }
+    });
+  },
+
   // PA recuperati / spesi
   animateApChange: function(stateId, newValue) {
     const apDots = document.querySelectorAll(
