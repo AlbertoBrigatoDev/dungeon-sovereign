@@ -285,7 +285,221 @@ window.DS = {
     }
   },
 
-  // Annuncio cambio fase
+  // Blocco F (Tappa B.1) - Animazione cinematica della prova di stanza.
+  // Selectors: '.ds-skillcheck-die' (numero D20, anima da scramble a finalRoll),
+  //            '.ds-skillcheck-total' (totale finale, count-up da 0 a finalTotal),
+  //            '.ds-skillcheck-banner' (banner SUCCESSO/FALLIMENTO, fade-in tardivo).
+  // durationMs: durata della parte "rolling" del dado (default 1200).
+  animateSkillCheck: function(finalRoll, finalTotal, durationMs) {
+    const duration = (typeof durationMs === 'number' && durationMs > 0) ? durationMs : 1200;
+    const dieEl = document.querySelector('.ds-skillcheck-die');
+    const totalEl = document.querySelector('.ds-skillcheck-total');
+    const bannerEl = document.querySelector('.ds-skillcheck-banner');
+
+    // Scramble del dado: rimbalza tra 1 e 20 fino al 'duration', poi atterra sul valore reale.
+    if (dieEl) {
+      const scrambleSteps = Math.max(8, Math.floor(duration / 60));
+      let i = 0;
+      const step = function() {
+        if (i < scrambleSteps) {
+          // Numero pseudo-random 1-20.
+          dieEl.textContent = String(1 + Math.floor(Math.random() * 20));
+          i++;
+          setTimeout(step, Math.floor(duration / scrambleSteps));
+        } else {
+          dieEl.textContent = String(finalRoll);
+          // Piccolo "punch" finale.
+          anime({
+            targets: dieEl,
+            scale: [1.0, 1.25, 1.0],
+            duration: 380,
+            easing: 'easeOutQuad'
+          });
+        }
+      };
+      step();
+    }
+
+    // Count-up del totale, parte a metà del rolling.
+    if (totalEl) {
+      const counter = { v: 0 };
+      const startDelay = Math.max(0, Math.floor(duration * 0.45));
+      anime({
+        targets: counter,
+        v: finalTotal,
+        duration: Math.max(400, Math.floor(duration * 0.7)),
+        delay: startDelay,
+        easing: 'easeOutCubic',
+        round: 1,
+        update: function() {
+          totalEl.textContent = String(counter.v);
+        }
+      });
+    }
+
+    // Banner: appare dopo che il dado si ferma.
+    if (bannerEl) {
+      bannerEl.style.opacity = '0';
+      anime({
+        targets: bannerEl,
+        opacity: [0, 1],
+        translateY: [10, 0],
+        scale: [0.9, 1.0],
+        duration: 460,
+        delay: duration + 120,
+        easing: 'easeOutBack'
+      });
+    }
+  },
+
+  // Blocco F (Tappa B.2) - Animazione overlay di inizio combattimento.
+  // Stagger fade-in delle righe del roster (alleati a sinistra, nemici a
+  // destra), titolo che entra dall'alto, card che pulsa leggermente.
+  // No-op difensivo se gli elementi non esistono.
+  animateCombatStart: function() {
+    const card = document.querySelector('.ds-combat-start-card');
+    if (card) {
+      anime({
+        targets: card,
+        translateY: [40, 0],
+        opacity: [0, 1],
+        duration: 480,
+        easing: 'easeOutCubic'
+      });
+    }
+
+    const title = document.querySelector('.ds-combat-start-title');
+    if (title) {
+      anime({
+        targets: title,
+        scale: [0.9, 1.0],
+        opacity: [0, 1],
+        duration: 600,
+        delay: 200,
+        easing: 'easeOutBack'
+      });
+    }
+
+    const rows = document.querySelectorAll('.ds-combat-start-row');
+    if (rows.length > 0) {
+      anime({
+        targets: rows,
+        translateX: function(el) {
+          return el.closest('.ds-combat-start-enemies') ? [24, 0] : [-24, 0];
+        },
+        opacity: [0, 1],
+        duration: 420,
+        delay: anime.stagger(80, { start: 350 }),
+        easing: 'easeOutCubic'
+      });
+    }
+  },
+
+  // Blocco F (Tappa B.3) - Animazione overlay di vittoria di stanza.
+  // Titolo scale-in con punch, count-up dei numeri delle mini-stats,
+  // card che entra dal basso. No confetti (riservati a RunEnd).
+  animateCombatVictory: function() {
+    const card = document.querySelector('.ds-combat-victory-card');
+    if (card) {
+      anime({
+        targets: card,
+        translateY: [50, 0],
+        opacity: [0, 1],
+        duration: 520,
+        easing: 'easeOutCubic'
+      });
+    }
+
+    const title = document.querySelector('.ds-combat-victory-title');
+    if (title) {
+      anime({
+        targets: title,
+        scale: [0.85, 1.05, 1.0],
+        opacity: [0, 1],
+        duration: 720,
+        delay: 200,
+        easing: 'easeOutBack'
+      });
+    }
+
+    const eyebrow = document.querySelector('.ds-combat-victory-eyebrow');
+    if (eyebrow) {
+      anime({
+        targets: eyebrow,
+        opacity: [0, 1],
+        translateY: [-10, 0],
+        duration: 400,
+        delay: 100,
+        easing: 'easeOutCubic'
+      });
+    }
+
+    // Count-up delle mini-stats (round, kills).
+    const stats = document.querySelectorAll('.ds-combat-victory-rounds, .ds-combat-victory-kills');
+    stats.forEach(function(el) {
+      const target = parseInt(el.getAttribute('data-target') || '0', 10);
+      if (isNaN(target) || target <= 0) {
+        el.textContent = String(isNaN(target) ? 0 : target);
+        return;
+      }
+      const counter = { v: 0 };
+      anime({
+        targets: counter,
+        v: target,
+        duration: 700,
+        delay: 600,
+        easing: 'easeOutCubic',
+        round: 1,
+        update: function() {
+          el.textContent = String(counter.v);
+        }
+      });
+    });
+  },
+
+  // Blocco F (Tappa C) - Animazione overlay di "viaggio nel dungeon".
+  // Card che entra dal basso, nodi pop in cascata, nodo corrente con flash.
+  animateDungeonMapReveal: function() {
+    const card = document.querySelector('.ds-dungeon-map-reveal-card');
+    if (card) {
+      anime({
+        targets: card,
+        translateY: [30, 0],
+        opacity: [0, 1],
+        duration: 500,
+        easing: 'easeOutCubic'
+      });
+    }
+
+    const nodes = document.querySelectorAll('.ds-dungeon-map-reveal .ds-dungeon-map-node');
+    if (nodes.length > 0) {
+      anime({
+        targets: nodes,
+        scale: [0.5, 1.0],
+        opacity: [0, 1],
+        duration: 320,
+        delay: anime.stagger(45, { start: 220 }),
+        easing: 'easeOutBack'
+      });
+    }
+
+    // Nodo corrente: flash di evidenziazione.
+    const current = document.querySelector('.ds-dungeon-map-reveal .ds-dungeon-map-node[data-status="current"] .ds-dungeon-map-circle');
+    if (current) {
+      anime({
+        targets: current,
+        scale: [1.0, 1.25, 1.0],
+        duration: 720,
+        delay: 220 + nodes.length * 45 + 120,
+        easing: 'easeOutQuad'
+      });
+    }
+  },
+
+  // Annuncio cambio fase — overlay "PREPARAZIONE" / "TURNO" / ecc. che
+  // compare in alto al centro. Durata totale 4.5 s (era 1.5 s): i 3 s
+  // aggiuntivi sono inseriti nel segmento di "hold" così il fade-in e
+  // il fade-out restano ritmati come prima e l'effetto non sembra "lento".
   announcePhaseChange: function(phaseName) {
     const overlay = document.getElementById('phase-announce');
     if (!overlay) return;
@@ -293,9 +507,11 @@ window.DS = {
     overlay.textContent = DS._phaseLabel(phaseName);
     anime({
       targets: overlay,
-      opacity: [0, 1, 1, 0],
-      translateY: [10, 0, 0, -10],
-      duration: 1500,
+      keyframes: [
+        { opacity: 1, translateY: 0,   duration: 375 },  // fade-in
+        { opacity: 1, translateY: 0,   duration: 3750 }, // hold (era 750 ms)
+        { opacity: 0, translateY: -10, duration: 375 }   // fade-out
+      ],
       easing: 'easeInOutQuad'
     });
   },

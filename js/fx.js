@@ -2737,10 +2737,13 @@ DS.fx.phaseAura = (function () {
             container.x = cx;
             container.y = cy;
             app.stage.addChild(container);
+            // Sincronizzato con DS.announcePhaseChange (durata 4.5 s totale).
+            // emitterLifetime esteso da 1.1 s a 4.1 s (+3 s) per accompagnare
+            // il testo per tutta la sua presenza in scena.
             const emitter = new PIXI.particles.Emitter(container, {
                 lifetime: { min: 0.8, max: 1.4 },
                 frequency: 0.04,
-                emitterLifetime: 1.1,
+                emitterLifetime: 4.1,
                 maxParticles: 40,
                 pos: { x: 0, y: 0 },
                 addAtBack: false,

@@ -33,6 +33,13 @@ DS.sounds = (function () {
         combat_start:    safe('sounds/combat_start.mp3',  { volume: 0.7 }),
         victory:         safe('sounds/victory.mp3',        { volume: 0.8 }),
         defeat:          safe('sounds/defeat.mp3',         { volume: 0.8 }),
+        // Blocco F (Tappa D) — Sting per gli overlay narrativi.
+        // Riusano i sample esistenti a volume più basso per non sovrapporsi
+        // alle SFX di gameplay e a victory/defeat di RunEnd; se in futuro
+        // arrivassero asset dedicati, basta cambiare il path qui.
+        skillcheck_success: safe('sounds/heal.mp3',            { volume: 0.55 }),
+        skillcheck_failure: safe('sounds/barrier_blocked.mp3', { volume: 0.55 }),
+        combat_victory:     safe('sounds/victory.mp3',          { volume: 0.55 }),
     };
 
     return {

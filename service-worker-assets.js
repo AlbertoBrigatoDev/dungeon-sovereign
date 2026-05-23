@@ -1,5 +1,5 @@
 self.assetsManifest = {
-  "version": "1JtE2va4",
+  "version": "gPeenTcg",
   "assets": [
     {
       "hash": "sha256-47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU=",
@@ -10,12 +10,12 @@ self.assetsManifest = {
       "url": "404.html"
     },
     {
-      "hash": "sha256-DrXxhRymqu4SFbB4/PO2dsKnIiiRuHtW917HGB+W4BE=",
-      "url": "_framework/DungeonSovereign.Engine.mmif908ucs.wasm"
+      "hash": "sha256-SON4LZufXChMC67xoIgxLrF9X055h6XDC1J8ZAg4LFY=",
+      "url": "_framework/DungeonSovereign.Engine.8oa5e83473.wasm"
     },
     {
-      "hash": "sha256-b2k/PErDO8JzCdHXiwwreNWB9VkV33KGb8mD0eiz9/U=",
-      "url": "_framework/DungeonSovereign.Web.vwd4ymhjgv.wasm"
+      "hash": "sha256-lrno3UNZOQJK+bcfKphFSKxsgHdku3Olb5uoN/wzuIU=",
+      "url": "_framework/DungeonSovereign.Web.6w5bvauo2o.wasm"
     },
     {
       "hash": "sha256-QyGeL+1jPZOu4u/mOLeqd7r/6k/DD2yK8DKo3YgEItQ=",
@@ -118,8 +118,8 @@ self.assetsManifest = {
       "url": "_framework/System.Net.Primitives.7xei2vd6i9.wasm"
     },
     {
-      "hash": "sha256-OqAWNRc1SMv5JNICZLsxpVf/MLozhKm+nOVZpMg6trw=",
-      "url": "_framework/System.Private.CoreLib.298cf74uyb.wasm"
+      "hash": "sha256-tF7coq/EKOSrZ95zDbmH9r4RbWJL7D4SrZNfcNGUzfc=",
+      "url": "_framework/System.Private.CoreLib.kyfehmltmf.wasm"
     },
     {
       "hash": "sha256-AMFftTR/hYuIpy9bK5YFda9NXSk5tc5KkJfoMw8e3d0=",
@@ -130,8 +130,8 @@ self.assetsManifest = {
       "url": "_framework/System.Runtime.InteropServices.JavaScript.wamqouyo1y.wasm"
     },
     {
-      "hash": "sha256-KrMof0OsZ4FgLXhSeyHsQ0yrmY7KpVFoIbGu6lRdRZo=",
-      "url": "_framework/System.Runtime.m1na8emjls.wasm"
+      "hash": "sha256-jlccrvxaHKZfvuhAbafhjgFFELfI6cSqDjGvnNjoLm8=",
+      "url": "_framework/System.Runtime.uwvs3lvamt.wasm"
     },
     {
       "hash": "sha256-i67HIiXR6zyoIAta9C5mqDE49JlPHnaZO1ektxLqmXc=",
@@ -158,12 +158,12 @@ self.assetsManifest = {
       "url": "_framework/blazor.webassembly.zxhwjtv6sc.js"
     },
     {
-      "hash": "sha256-EUpo/C4aKlCIkrCaczwIAoOk3XXh+qpzAI3NacEx20M=",
-      "url": "_framework/dotnet.76purk5z3u.js"
+      "hash": "sha256-mjJQlT/bM4xn5i2YbokowmhPVvPb94+S0w2p64425/E=",
+      "url": "_framework/dotnet.mllxb7axrb.js"
     },
     {
-      "hash": "sha256-auNajBCt33EWNiuvS+NNTXBwb7zhbrVXzHUfSfTZBZ8=",
-      "url": "_framework/dotnet.native.imkoda52yu.wasm"
+      "hash": "sha256-eZ1T1v85r6lvO0Gt1PHlTSwnTXbovM6lx5avN0n1Fyw=",
+      "url": "_framework/dotnet.native.1a5fdiqmnh.wasm"
     },
     {
       "hash": "sha256-t2sLHIeFuKgbEH+wz5jXGlVRt+hMNlyCkCwLtVZUwws=",
@@ -606,7 +606,7 @@ self.assetsManifest = {
       "url": "assets/dungeon-sovereign/units/enemy-wolf.svg"
     },
     {
-      "hash": "sha256-5zcakAaNcObmOFF/3WBOm4VG34KVeF8kXek6+23b82A=",
+      "hash": "sha256-NcC11tvvsn7Md/gwUKS+oKsJ45mwCRRkeBO5j4d4FkE=",
       "url": "css/app.css"
     },
     {
@@ -634,15 +634,15 @@ self.assetsManifest = {
       "url": "icons/icon-maskable-512.png"
     },
     {
-      "hash": "sha256-RENEvoPCSRJz1eXiD2HG0cZntfGNUeG1o947T77dDwM=",
+      "hash": "sha256-//aB7xt+QRXSWcGFO9RizZGo1K15iYD6YX9jKkEue3k=",
       "url": "index.html"
     },
     {
-      "hash": "sha256-GtP+HSSW9XYQuOfmLq6nvQOyqdeGofYYAZyjV6s5GC0=",
+      "hash": "sha256-IaR3JLBrLNT6V8Xt309xuO+tG6DQdbce+AhG78Po9o0=",
       "url": "js/animations.js"
     },
     {
-      "hash": "sha256-vwxGpL+Me0YZrYosfGPVi5yLgYt29OI8AYNmtb3m7pk=",
+      "hash": "sha256-jkt4K1qJHOgddezSFpglcEDkcBMmwqVsmDndVIv5xaI=",
       "url": "js/fx.js"
     },
     {
@@ -650,7 +650,7 @@ self.assetsManifest = {
       "url": "js/pwa.js"
     },
     {
-      "hash": "sha256-rLUOpMH4omSW5eK/jMg96gJQa8VzJRj9N4MHX4elDE8=",
+      "hash": "sha256-6dqqSGTWeMEJph7jB4QsOhT5liMsNQIekuOLxK3dDuI=",
       "url": "js/sounds.js"
     },
     {
