@@ -107,6 +107,12 @@ window.DS = {
     clone.style.margin = '0';
     clone.style.zIndex = '45';
     clone.style.pointerEvents = 'none';
+    // Blocco G — Reset del transform inline copiato dalla carta sorgente
+    // (HandSlot fan layout). Senza questo il clone partirebbe spostato
+    // del Slot.TranslateX/Y, dato che la sua position:fixed+left/top è
+    // già la posizione visiva finale (startRect tiene già conto del
+    // transform). Ripartiamo da identità per non sommare gli offset.
+    clone.style.transform = 'none';
     document.body.appendChild(clone);
 
     const deltaX = destX - (startRect.left + startRect.width / 2);
@@ -164,6 +170,9 @@ window.DS = {
     clone.style.margin = '0';
     clone.style.zIndex = '45';
     clone.style.pointerEvents = 'none';
+    // Blocco G — Reset del transform copiato dal HandSlot fan layout
+    // (vedi nota nel cardFlight sopra).
+    clone.style.transform = 'none';
     document.body.appendChild(clone);
 
     const deltaX = destX - (startRect.left + startRect.width / 2);
@@ -626,6 +635,110 @@ window.DS = {
     el.style.left = left + 'px';
     el.style.top = top + 'px';
     el.style.visibility = 'visible';
+  },
+
+  // Blocco G (Tappa G.4) - Slide-in al pescaggio di una nuova carta.
+  // La carta parte off-screen a destra (simulando il mazzo), ruotata,
+  // e raggiunge il suo slot finale nel ventaglio con easeOutBack.
+  //
+  // IMPORTANTE: Anime.js NON supporta tween di `transform` come stringa
+  // unica ("translate(...) rotate(...)"). Va animato per componenti
+  // separate (translateX, translateY, rotate, scale). Il C# passa
+  // direttamente i valori finali calcolati da HandSlot.
+  //
+  // Parametri:
+  //   cardElId  = id DOM della carta (es. 'card-{instanceId}')
+  //   endX/Y    = transform finale lungo X/Y (px)
+  //   endRot    = rotazione finale (gradi)
+  //   endScale  = scala finale
+  //   durationMs = durata animazione, default 460
+  //   delayMs   = ritardo iniziale (per stagger sul mulligan), default 0
+  animateCardDrawIn: function(cardElId, endX, endY, endRot, endScale, durationMs, delayMs) {
+    const el = document.getElementById(cardElId);
+    if (!el) return;
+    // Rispetta il toggle FX: se disabilitato, niente animazione.
+    if (window.DS && DS.fx && DS.fx.enabled === false) return;
+
+    // Stato iniziale "off-screen destra, ruotata in giù" via anime.set
+    // così Anime.js registra i valori delle proprietà separate; poi
+    // tween fino ai valori finali ricevuti dal C#.
+    anime.set(el, {
+      translateX: 900,
+      translateY: -30,
+      rotate: 35,
+      scale: 0.85
+    });
+
+    anime({
+      targets: el,
+      translateX: endX,
+      translateY: endY,
+      rotate: endRot,
+      scale: endScale,
+      duration: (typeof durationMs === 'number' && durationMs > 0) ? durationMs : 460,
+      delay: (typeof delayMs === 'number' && delayMs >= 0) ? delayMs : 0,
+      easing: 'easeOutBack'
+    });
+  },
+
+  // Blocco G (Tappa G.3) - Posiziona il tooltip ANCORATO sopra un elemento
+  // DOM (centrato orizzontalmente, con margine). Se non c'è spazio sopra,
+  // ribalta sotto. Pattern Hearthstone-like: il tooltip non segue il
+  // cursore, resta fermo sopra la carta finché si esce dall'area.
+  //
+  // Parametri:
+  //   tooltipEl   = ElementReference al div radice del tooltip
+  //   anchorElId  = id DOM dell'elemento di ancoraggio (es. 'card-{instanceId}')
+  //   margin      = spazio fra l'ancora e il tooltip (default 12 px)
+  //
+  // Effetti: style.left / style.top / style.visibility sul tooltip.
+  positionTooltipAboveAnchor: function(tooltipEl, anchorElId, margin) {
+    if (!tooltipEl) return;
+    const m = (typeof margin === 'number' && margin >= 0) ? margin : 12;
+    const safeMargin = 8;
+    const vw = window.innerWidth;
+    const vh = window.innerHeight;
+
+    const anchorEl = document.getElementById(anchorElId);
+    if (!anchorEl) {
+      // Fallback: centro viewport in alto. Niente flash di tooltip in (0,0).
+      const tRect = tooltipEl.getBoundingClientRect();
+      tooltipEl.style.left = Math.max(safeMargin, (vw - tRect.width) / 2) + 'px';
+      tooltipEl.style.top = safeMargin + 'px';
+      tooltipEl.style.visibility = 'visible';
+      return;
+    }
+
+    const aRect = anchorEl.getBoundingClientRect();
+    const tRect = tooltipEl.getBoundingClientRect();
+
+    // Centrato orizzontalmente rispetto all'ancora.
+    let left = aRect.left + (aRect.width - tRect.width) / 2;
+    // Default: sopra l'ancora con margine.
+    let top = aRect.top - tRect.height - m;
+
+    // Flip verticale: se sfora in alto, ribalta sotto.
+    if (top < safeMargin) {
+      const below = aRect.bottom + m;
+      if (below + tRect.height <= vh - safeMargin) {
+        top = below;
+      } else {
+        // Non sta né sopra né sotto: prendi il meno peggio (in alto, clamp).
+        top = Math.max(safeMargin, vh - tRect.height - safeMargin);
+      }
+    }
+
+    // Clamp orizzontale al viewport.
+    if (left + tRect.width + safeMargin > vw) {
+      left = vw - tRect.width - safeMargin;
+    }
+    if (left < safeMargin) {
+      left = safeMargin;
+    }
+
+    tooltipEl.style.left = left + 'px';
+    tooltipEl.style.top = top + 'px';
+    tooltipEl.style.visibility = 'visible';
   }
 };
 

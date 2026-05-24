@@ -1,5 +1,5 @@
 self.assetsManifest = {
-  "version": "QJvYWGly",
+  "version": "vHS3t2QP",
   "assets": [
     {
       "hash": "sha256-47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU=",
@@ -10,12 +10,12 @@ self.assetsManifest = {
       "url": "404.html"
     },
     {
-      "hash": "sha256-0LfnrjS4gAfWPh5/rrICQ8uGVL6jbJ7X6PDStKMMJxY=",
-      "url": "_framework/DungeonSovereign.Engine.oa7xhdyawh.wasm"
+      "hash": "sha256-Iy5imcHYM2Y8ul0wpAX0MzO6lHC9SYfpvGdsVPPhoj8=",
+      "url": "_framework/DungeonSovereign.Engine.rmbpj1hu7n.wasm"
     },
     {
-      "hash": "sha256-wfUiYxXGJ7TDMlM5bAiIBBUdCPuRzC8A5YnRrLhIiXg=",
-      "url": "_framework/DungeonSovereign.Web.rpqo1nd136.wasm"
+      "hash": "sha256-pSjduQ9y+wwD8tCE2o0uG9myw2r+g+xMq9LuNmY8Fvw=",
+      "url": "_framework/DungeonSovereign.Web.deiiz2nd21.wasm"
     },
     {
       "hash": "sha256-QyGeL+1jPZOu4u/mOLeqd7r/6k/DD2yK8DKo3YgEItQ=",
@@ -158,8 +158,8 @@ self.assetsManifest = {
       "url": "_framework/blazor.webassembly.zxhwjtv6sc.js"
     },
     {
-      "hash": "sha256-T4Gk/Zj3rgupKuT16OqMNZoKxTlmMbcdZohbULFJDAY=",
-      "url": "_framework/dotnet.92um1rh5zm.js"
+      "hash": "sha256-eSwHvTVjepMP7BKho5caI/eAvjN3IW/1AvEwXbSPkwc=",
+      "url": "_framework/dotnet.5h5n1wdjaf.js"
     },
     {
       "hash": "sha256-eZ1T1v85r6lvO0Gt1PHlTSwnTXbovM6lx5avN0n1Fyw=",
@@ -606,7 +606,7 @@ self.assetsManifest = {
       "url": "assets/dungeon-sovereign/units/enemy-wolf.svg"
     },
     {
-      "hash": "sha256-NcC11tvvsn7Md/gwUKS+oKsJ45mwCRRkeBO5j4d4FkE=",
+      "hash": "sha256-oz4dDtNeIzFwRYh+BFvezVFSi9kgStfciwITL1uVnHw=",
       "url": "css/app.css"
     },
     {
@@ -634,11 +634,11 @@ self.assetsManifest = {
       "url": "icons/icon-maskable-512.png"
     },
     {
-      "hash": "sha256-/wC/7tb0Abdyh74S19dg06kaTcgYNzNKKxrkYAe8U3Q=",
+      "hash": "sha256-EhktqsBrH3nNzEBb9p4A8/2cAOKFGRDDQP3C6z+eZ4A=",
       "url": "index.html"
     },
     {
-      "hash": "sha256-IaR3JLBrLNT6V8Xt309xuO+tG6DQdbce+AhG78Po9o0=",
+      "hash": "sha256-vnNk/K/SpyLUDLsS8lLXouot5fk6IQWvkY4dq+A98wg=",
       "url": "js/animations.js"
     },
     {
