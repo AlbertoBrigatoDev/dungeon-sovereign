@@ -1,5 +1,5 @@
 self.assetsManifest = {
-  "version": "Ycngw01m",
+  "version": "vQ1rBGIm",
   "assets": [
     {
       "hash": "sha256-47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU=",
@@ -10,12 +10,12 @@ self.assetsManifest = {
       "url": "404.html"
     },
     {
-      "hash": "sha256-Iy5imcHYM2Y8ul0wpAX0MzO6lHC9SYfpvGdsVPPhoj8=",
-      "url": "_framework/DungeonSovereign.Engine.rmbpj1hu7n.wasm"
+      "hash": "sha256-XLHYpZcVP+ifk3mJwTNfa1BSz/Z39HU0QM9tGj9EqBU=",
+      "url": "_framework/DungeonSovereign.Engine.of3lubmg3k.wasm"
     },
     {
-      "hash": "sha256-rekDmkr56Q0ll9yf5txEYuYJxpsNNmQcThVTMWeN5c0=",
-      "url": "_framework/DungeonSovereign.Web.tsyueoff4n.wasm"
+      "hash": "sha256-a1UtY63/ipUZsoCxTTeHWousos92hgXdeS2b7YBXr+I=",
+      "url": "_framework/DungeonSovereign.Web.zayvi51sm0.wasm"
     },
     {
       "hash": "sha256-QyGeL+1jPZOu4u/mOLeqd7r/6k/DD2yK8DKo3YgEItQ=",
@@ -166,12 +166,12 @@ self.assetsManifest = {
       "url": "_framework/dotnet.native.j9yxww2air.js"
     },
     {
-      "hash": "sha256-t0OBeteC0kDdAw5gT4tucu74YjIsNQFIfxPRhoGqckc=",
-      "url": "_framework/dotnet.pgzfv3f423.js"
-    },
-    {
       "hash": "sha256-YyudibIWETMKrLb+nAZdJ+xDY7HY6BWf6s32UAdcvCU=",
       "url": "_framework/dotnet.runtime.r2kbxkuujc.js"
+    },
+    {
+      "hash": "sha256-Mdfnm70E5eNoa9pRtlo+ugPx/whWneeYwPQI2T2kHDM=",
+      "url": "_framework/dotnet.tlic6ef100.js"
     },
     {
       "hash": "sha256-SZLtQnRc0JkwqHab0VUVP7T3uBPSeYzxzDnpxPpUnHk=",
@@ -218,6 +218,10 @@ self.assetsManifest = {
       "url": "assets/dungeon-sovereign/cards/action_colpo_doppio.png"
     },
     {
+      "hash": "sha256-3nIhpBspRQKL01Z/N5zA0Mo9u5FAxa908QkZ13qb6cg=",
+      "url": "assets/dungeon-sovereign/cards/action_colpo_frangiosso.png"
+    },
+    {
       "hash": "sha256-z8MVrYnLLDTokXB6lwD89QEMFFAZKBuXsBjTHzNq+Gw=",
       "url": "assets/dungeon-sovereign/cards/action_colpo_fulmineo.png"
     },
@@ -254,6 +258,14 @@ self.assetsManifest = {
       "url": "assets/dungeon-sovereign/cards/action_freccia_avvelenata.jpg"
     },
     {
+      "hash": "sha256-y9TdphV/7HKU8fMktxvCy5E1rU5n+ikWXrv2MRREc9M=",
+      "url": "assets/dungeon-sovereign/cards/action_freccia_debilitante.png"
+    },
+    {
+      "hash": "sha256-2dyAisr+o850pfn+hV8y/pbdlqCjAUuuSIU/JlfEtUc=",
+      "url": "assets/dungeon-sovereign/cards/action_freccia_di_gelo_persistente.png"
+    },
+    {
       "hash": "sha256-PLS/keKXfbH8iSDym//ZpIzJwBAvHFD2vTgQQcAWeWg=",
       "url": "assets/dungeon-sovereign/cards/action_freccia_paralizzante.png"
     },
@@ -286,12 +298,24 @@ self.assetsManifest = {
       "url": "assets/dungeon-sovereign/cards/action_medicazione_rapida.png"
     },
     {
+      "hash": "sha256-4jJZMVtaeqTExgdQ9HuHlgs+clbL1o7PomkoUvnWmZM=",
+      "url": "assets/dungeon-sovereign/cards/action_mimetizzazione_letale.png"
+    },
+    {
       "hash": "sha256-YjSoRt8Rt9XVs/lJLMzjWnriGxhSIsQNlT0OnjTHCLA=",
       "url": "assets/dungeon-sovereign/cards/action_muro_di_ferro.jpg"
     },
     {
       "hash": "sha256-+qDvI6W/HJFKfvkiRNNl1dU245IPUTPq2eyrCYbnsUs=",
       "url": "assets/dungeon-sovereign/cards/action_pioggia_di_frecce.jpg"
+    },
+    {
+      "hash": "sha256-jHU05z2FqUjvmledj3FPEHWaVTssYKVDXvZz+Y8F/3M=",
+      "url": "assets/dungeon-sovereign/cards/action_pioggia_di_spine.png"
+    },
+    {
+      "hash": "sha256-Et5ddfVH7QKxXBPpBEwlTHoY/6hcxd5Yzjefne0x9rg=",
+      "url": "assets/dungeon-sovereign/cards/action_postura_del_toro.png"
     },
     {
       "hash": "sha256-tSaK1XWzCeoqnPIipe6vlC3kzOCMVmfb7pWEqJcZ6/w=",
@@ -304,6 +328,14 @@ self.assetsManifest = {
     {
       "hash": "sha256-EKfzaBigEF4SGykeJWdiBIb4W1HATNVrVfXeba34z3k=",
       "url": "assets/dungeon-sovereign/cards/action_raffica.png"
+    },
+    {
+      "hash": "sha256-T+pH15Ibu+2PJHwroMGwMaxww91nuYJvOdcy0rnuvSk=",
+      "url": "assets/dungeon-sovereign/cards/action_ripresa_del_combattente.png"
+    },
+    {
+      "hash": "sha256-MBX4w5bZyhpaGs0QhF58ib06H1NGm7yVFQuv2lwXJcM=",
+      "url": "assets/dungeon-sovereign/cards/action_ripresa_nellombra.png"
     },
     {
       "hash": "sha256-BwoDzKHmABrRRaor+rg0itZpmqUhCYyK1i3e8V1gr3k=",
@@ -326,12 +358,28 @@ self.assetsManifest = {
       "url": "assets/dungeon-sovereign/cards/action_spazzata.jpg"
     },
     {
+      "hash": "sha256-eZw9vSb+qt7idgBF1IcTtJ58p/2cXbvzvI2oJ1b/sn8=",
+      "url": "assets/dungeon-sovereign/cards/action_spazzata_devastante.png"
+    },
+    {
+      "hash": "sha256-1hI8n1fjx7/0K1O68igmLO5tRmLWF+/ZwGU4FDwuZl4=",
+      "url": "assets/dungeon-sovereign/cards/action_tenacia_del_guerriero.png"
+    },
+    {
       "hash": "sha256-BODcIHK/oPaBjl29sSzpsq7syuWogb+8zWkBZCFS4U4=",
       "url": "assets/dungeon-sovereign/cards/action_tiro_mirato.jpg"
     },
     {
       "hash": "sha256-8C5XiSC5XhMnPzsL7s/Bzwb25ftZJHV+KphJzFNBT4Y=",
       "url": "assets/dungeon-sovereign/cards/action_urlo_di_battaglia.png"
+    },
+    {
+      "hash": "sha256-4oKofRDsk0l2Coxa08YzB+bMpsXqaUP0eXlVdZMRBnI=",
+      "url": "assets/dungeon-sovereign/cards/action_urlo_di_sfida.png"
+    },
+    {
+      "hash": "sha256-GYfM5vRafksE4k2Bq9ML6dJl6QbOSR84oU518Iit9H8=",
+      "url": "assets/dungeon-sovereign/cards/action_veleno_lento.png"
     },
     {
       "hash": "sha256-3MUEbvblSrkH0yQkLBHkqxWQFXl5if/+t8KUtbf0mWs=",
@@ -378,6 +426,14 @@ self.assetsManifest = {
       "url": "assets/dungeon-sovereign/cards/companion_famiglio_guaritore.png"
     },
     {
+      "hash": "sha256-vWuxbbHD9ulmm//Z8rloSti55wSc7fHHIjFdvNpJWwo=",
+      "url": "assets/dungeon-sovereign/cards/companion_folletto_della_fortuna.png"
+    },
+    {
+      "hash": "sha256-tJXfIfny+nW5WyGgpyO7nlcugn3l9er8UGsNlo6eIiw=",
+      "url": "assets/dungeon-sovereign/cards/companion_golem_di_fango.png"
+    },
+    {
       "hash": "sha256-zrHBKIahElD5n9WGAXq5XcM3tBT9F5JnA0eL9nd+cUw=",
       "url": "assets/dungeon-sovereign/cards/companion_lupo_da_guerra.png"
     },
@@ -386,8 +442,24 @@ self.assetsManifest = {
       "url": "assets/dungeon-sovereign/cards/companion_orso_da_guerra.png"
     },
     {
+      "hash": "sha256-29s0ZGS4Rc53j3o7zcWCXnSSve30urBSfkonpXyEwoc=",
+      "url": "assets/dungeon-sovereign/cards/companion_spirito_della_preda.png"
+    },
+    {
+      "hash": "sha256-pUfnJHO9XcTf/1vJJBGwNBa968CMHLOTm+Y55y1m/Fs=",
+      "url": "assets/dungeon-sovereign/cards/companion_stendardo_del_guerriero.png"
+    },
+    {
       "hash": "sha256-cN7BpsV6NwUyPlRkJH3+XA0UYsVnpB9A1vfLQ5u+V8Q=",
       "url": "assets/dungeon-sovereign/cards/consumable_antidoto.jpg"
+    },
+    {
+      "hash": "sha256-2RQp1JTPj5TQbEHqVZoXtDbeu6OWTT8iM3APU38EicU=",
+      "url": "assets/dungeon-sovereign/cards/consumable_benda_insanguinata.png"
+    },
+    {
+      "hash": "sha256-MkoEcq27m4ngO9CEr6T039rJu3Sic0XHsqHFD+HizIc=",
+      "url": "assets/dungeon-sovereign/cards/consumable_bomba_acida.png"
     },
     {
       "hash": "sha256-OmERcpxw/RbeqgZr8p8N7+Jj7WKWz+UX4uFKp2AlkwE=",
@@ -398,36 +470,132 @@ self.assetsManifest = {
       "url": "assets/dungeon-sovereign/cards/consumable_cristallo_barriera.jpg"
     },
     {
+      "hash": "sha256-BIs0tGOOV0TwVPLCfSt4yP5UGOqvhyjGkwTXExEJp+o=",
+      "url": "assets/dungeon-sovereign/cards/consumable_elisir_della_mente.png"
+    },
+    {
+      "hash": "sha256-HkWIqlR0q8RSTocVmYlSOxK9L/Nlj8eqZ8NlddOHR70=",
+      "url": "assets/dungeon-sovereign/cards/consumable_elisir_di_velocita.png"
+    },
+    {
       "hash": "sha256-ihx4S5KhXqXlxiny6yKaA0JxzXpfVPwZ8WSO9oMPfho=",
       "url": "assets/dungeon-sovereign/cards/consumable_pergamena_dellintuito.jpg"
+    },
+    {
+      "hash": "sha256-6NKIKYgslHMufXk1OTc8e3zzY53YtiD7NJxzuQrzhvY=",
+      "url": "assets/dungeon-sovereign/cards/consumable_polvere_distraente.png"
+    },
+    {
+      "hash": "sha256-qvRhjI0ByHpVtRkMBErJXBioMDQw4Wm+oOy1+39MOKo=",
+      "url": "assets/dungeon-sovereign/cards/consumable_pozione_del_coraggio.png"
     },
     {
       "hash": "sha256-wWJSSF8GF4qi00HszvC38YCpy6uXvoBfK+NrksWGcfM=",
       "url": "assets/dungeon-sovereign/cards/consumable_pozione_di_cura.jpg"
     },
     {
+      "hash": "sha256-TcuO/0TEdiL2ZcRsXkqFdADG6qAeVsZ/kjr/HUthHT0=",
+      "url": "assets/dungeon-sovereign/cards/consumable_pozione_di_forza.png"
+    },
+    {
+      "hash": "sha256-YE3C6+rC2//scJb7CJa/b5ba+8jh7H/palBI0BlRWuM=",
+      "url": "assets/dungeon-sovereign/cards/consumable_pozione_di_ghiaccio.png"
+    },
+    {
+      "hash": "sha256-f5pIutNOyckuLMNiSZKndpSfcY2iLmYuGt6ZgoleLjE=",
+      "url": "assets/dungeon-sovereign/cards/consumable_sigillo_di_protezione.png"
+    },
+    {
+      "hash": "sha256-1/3vMRcmhDdDlIKGPqu5bnZSOvlaiCUO9bbHZopJF0A=",
+      "url": "assets/dungeon-sovereign/cards/consumable_veleno_da_contatto.png"
+    },
+    {
       "hash": "sha256-/1GsDmSVWE55tWKkeWeXOdg1VuyftJWVw+cDP4DCYqQ=",
       "url": "assets/dungeon-sovereign/cards/equip_amuleto_della_rigenerazione.jpg"
+    },
+    {
+      "hash": "sha256-aFnWFXt84/dBNhnMB0Ql4sudn/pEvpgN3SDH/J6JSKs=",
+      "url": "assets/dungeon-sovereign/cards/equip_amuleto_della_salvezza.png"
+    },
+    {
+      "hash": "sha256-ZnNv+LJpmCdS2dxjKP7l5fAYK90jkTYnFQWKD8Qv5TU=",
+      "url": "assets/dungeon-sovereign/cards/equip_anello_del_mago.png"
     },
     {
       "hash": "sha256-fKBgvnh9oOWXKU+6b5NXdONJKffy0Fuak9EzxTljCgY=",
       "url": "assets/dungeon-sovereign/cards/equip_arco_del_cacciatore.jpg"
     },
     {
+      "hash": "sha256-Pdxkg33pbLyBuPSDmuun7hYhKQJ7SptFHuiWTv7RPU0=",
+      "url": "assets/dungeon-sovereign/cards/equip_arco_del_vento_2.png"
+    },
+    {
       "hash": "sha256-oBXlCdoFCGOOpHf1sATYLyOwja/k5lI76BMyC2p74Dk=",
       "url": "assets/dungeon-sovereign/cards/equip_armatura_di_ferro.jpg"
+    },
+    {
+      "hash": "sha256-y5tfHeXZ4TNybU3nzb1efKdkWC9dSRpf42O//g+Icsw=",
+      "url": "assets/dungeon-sovereign/cards/equip_ascia_del_massacro.png"
+    },
+    {
+      "hash": "sha256-2pFPlFVe+2RXlZznbOTGWtdJFlWpm194cx5aM35muSo=",
+      "url": "assets/dungeon-sovereign/cards/equip_ascia_del_massacro_2.png"
+    },
+    {
+      "hash": "sha256-+3JLHK/T/8MUlI0yArB+SRbGq1QiUvQJt7bdRK8j8+E=",
+      "url": "assets/dungeon-sovereign/cards/equip_corazza_del_catafratto.png"
+    },
+    {
+      "hash": "sha256-GUunkVtPfDXCBl3jfnyfRUzyARpeK0g1eSUV/CbVB5U=",
+      "url": "assets/dungeon-sovereign/cards/equip_corazza_del_cinghiale.png"
     },
     {
       "hash": "sha256-GuyqNEhSQgrFitv2QVIzd25a5aTI038ByT6raNoBq4g=",
       "url": "assets/dungeon-sovereign/cards/equip_lama_del_cavaliere.jpg"
     },
     {
+      "hash": "sha256-IFFq/teG3BZnzbLyUGeco5uiJXarvgMPO41QLH0yGtM=",
+      "url": "assets/dungeon-sovereign/cards/equip_mantello_dell_elusivo.png"
+    },
+    {
+      "hash": "sha256-swM41sNfzDaUDQq1KSRU8UcJVAeMOHjiMtnAaPhsvpE=",
+      "url": "assets/dungeon-sovereign/cards/equip_mantello_della_falsa_morte.png"
+    },
+    {
       "hash": "sha256-ptQ9RHUeCt+VpHZ4X7HPqItIMD82ivxdjlldLskBqnI=",
       "url": "assets/dungeon-sovereign/cards/equip_mantello_dellombra.jpg"
     },
     {
+      "hash": "sha256-nXm6bUCRSTMl5fOBBCIuSmJobh/ArI3lmWxtYSBSzUU=",
+      "url": "assets/dungeon-sovereign/cards/equip_medaglione_del_sangue.png"
+    },
+    {
+      "hash": "sha256-h+sTis3dUn6B2MUo3OM5EBM/wl63M32TWFVauGr71Zc=",
+      "url": "assets/dungeon-sovereign/cards/equip_pugnale_dell_ombra.png"
+    },
+    {
+      "hash": "sha256-H/ujX+YkiN1B5LdW3wGQwg1ltmFVU0K6vixGUZXT4Bo=",
+      "url": "assets/dungeon-sovereign/cards/equip_pugnale_dell_ombra_2.png"
+    },
+    {
       "hash": "sha256-28ZfVLusoB9GbtLoRHEBtlMOy59pIiwjny0agmAvDT4=",
       "url": "assets/dungeon-sovereign/cards/equip_scudo_del_bastione.jpg"
+    },
+    {
+      "hash": "sha256-2YiBU/6gHMlh5M7Yd5aVRRFqx+t+u3Oyfe5Xjz8bzdY=",
+      "url": "assets/dungeon-sovereign/cards/equip_scudo_del_muro.png"
+    },
+    {
+      "hash": "sha256-x5fb0pUvSs2q/kgYwiyPQgKagCCVHnBWCswhmKLA0Wk=",
+      "url": "assets/dungeon-sovereign/cards/equip_scudo_della_ritorsione.png"
+    },
+    {
+      "hash": "sha256-3VGy8bYCX9KWYxm4Mi+PA+jLFupjY5JP5eiDeJJxcd4=",
+      "url": "assets/dungeon-sovereign/cards/equip_spadone_del_guardiano.png"
+    },
+    {
+      "hash": "sha256-geel0lmNTqOVE2xyIGEeglsrFLhD7n6Zwl4df/qEB60=",
+      "url": "assets/dungeon-sovereign/cards/equip_viscidi_di_seta_ragno.png"
     },
     {
       "hash": "sha256-AsjzjkMJNxBSdA7RTcpBWrNI4+xIZIwCjna93G6OY1Y=",
@@ -634,7 +802,7 @@ self.assetsManifest = {
       "url": "icons/icon-maskable-512.png"
     },
     {
-      "hash": "sha256-slvqxwn1/VjqAv+FRtO/I7mSIWqkMKzf1vXlFSZhT5w=",
+      "hash": "sha256-jzEFbdDgUJjkSi1ioJNvaiuLPZmMTW223GP4mR/m7PM=",
       "url": "index.html"
     },
     {
