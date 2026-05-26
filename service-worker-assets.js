@@ -1,5 +1,5 @@
 self.assetsManifest = {
-  "version": "vQ1rBGIm",
+  "version": "rgmkSqkp",
   "assets": [
     {
       "hash": "sha256-47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU=",
@@ -10,12 +10,12 @@ self.assetsManifest = {
       "url": "404.html"
     },
     {
-      "hash": "sha256-XLHYpZcVP+ifk3mJwTNfa1BSz/Z39HU0QM9tGj9EqBU=",
-      "url": "_framework/DungeonSovereign.Engine.of3lubmg3k.wasm"
+      "hash": "sha256-2N0g52Gy6BQUyQIJHR29DL6qdYhVAvXImIxczdQdLFw=",
+      "url": "_framework/DungeonSovereign.Engine.wma0c7iinv.wasm"
     },
     {
-      "hash": "sha256-a1UtY63/ipUZsoCxTTeHWousos92hgXdeS2b7YBXr+I=",
-      "url": "_framework/DungeonSovereign.Web.zayvi51sm0.wasm"
+      "hash": "sha256-i0ZnXXaVHbs5EAOznfLi6IF1hAtq2X9Fsbl8+/GGaK0=",
+      "url": "_framework/DungeonSovereign.Web.r46es9lqlz.wasm"
     },
     {
       "hash": "sha256-QyGeL+1jPZOu4u/mOLeqd7r/6k/DD2yK8DKo3YgEItQ=",
@@ -158,6 +158,10 @@ self.assetsManifest = {
       "url": "_framework/blazor.webassembly.zxhwjtv6sc.js"
     },
     {
+      "hash": "sha256-gCJUFx3n1m911LVTjqWqhmQLLQBxGqLfu/+zvzSfrAQ=",
+      "url": "_framework/dotnet.8ir97quxbs.js"
+    },
+    {
       "hash": "sha256-eZ1T1v85r6lvO0Gt1PHlTSwnTXbovM6lx5avN0n1Fyw=",
       "url": "_framework/dotnet.native.1a5fdiqmnh.wasm"
     },
@@ -168,10 +172,6 @@ self.assetsManifest = {
     {
       "hash": "sha256-YyudibIWETMKrLb+nAZdJ+xDY7HY6BWf6s32UAdcvCU=",
       "url": "_framework/dotnet.runtime.r2kbxkuujc.js"
-    },
-    {
-      "hash": "sha256-Mdfnm70E5eNoa9pRtlo+ugPx/whWneeYwPQI2T2kHDM=",
-      "url": "_framework/dotnet.tlic6ef100.js"
     },
     {
       "hash": "sha256-SZLtQnRc0JkwqHab0VUVP7T3uBPSeYzxzDnpxPpUnHk=",
@@ -527,7 +527,7 @@ self.assetsManifest = {
     },
     {
       "hash": "sha256-Pdxkg33pbLyBuPSDmuun7hYhKQJ7SptFHuiWTv7RPU0=",
-      "url": "assets/dungeon-sovereign/cards/equip_arco_del_vento_2.png"
+      "url": "assets/dungeon-sovereign/cards/equip_arco_del_vento.png"
     },
     {
       "hash": "sha256-oBXlCdoFCGOOpHf1sATYLyOwja/k5lI76BMyC2p74Dk=",
@@ -750,7 +750,7 @@ self.assetsManifest = {
       "url": "assets/dungeon-sovereign/effects/status-spritesheet.svg"
     },
     {
-      "hash": "sha256-6tEtDWMGkah9tX6jKNExPFU5p/+EyVs9zlNwiiRoqsk=",
+      "hash": "sha256-ZlN7mKaBB1AKGp3wftgUi1JalEJFVPCITgu5lNc/kkA=",
       "url": "assets/dungeon-sovereign/manifest/assets.json"
     },
     {
@@ -802,7 +802,7 @@ self.assetsManifest = {
       "url": "icons/icon-maskable-512.png"
     },
     {
-      "hash": "sha256-jzEFbdDgUJjkSi1ioJNvaiuLPZmMTW223GP4mR/m7PM=",
+      "hash": "sha256-ZSg0jPs6CIGMU4uZyopecTTx4awPN012Z9S4KVIUiX0=",
       "url": "index.html"
     },
     {
